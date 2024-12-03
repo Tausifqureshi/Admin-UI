@@ -13,8 +13,8 @@ function Admin() {
                 console.log(response.data);
                 setIsData(response.data); // Data set karna
             } catch (error) {
-                setError("Data fetch karne me error hua. Please try again."); // Error message set karna
-                console.error(err); // Log error for debugging
+                setError(`Error: ${error.response ? error.response.status : 'Unknown'} - ${error.message}`); // Error message set karna
+                console.error(error); // Log error for debugging
             }
         };
 
@@ -22,7 +22,7 @@ function Admin() {
     }, []);
 
     if (error) {
-     return <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>
+     return <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}> Error: {error}</p>
     }
 
   return <div>
