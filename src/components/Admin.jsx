@@ -10,6 +10,7 @@ function Admin() {
             try {
                 setError(null); // Error reset karna
                 const response = await axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json");
+                console.log(response.data);
                 setIsData(response.data); // Data set karna
             } catch (error) {
                 setError("Data fetch karne me error hua. Please try again."); // Error message set karna
