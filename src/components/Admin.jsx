@@ -4,6 +4,7 @@ import axios from "axios";
 function Admin() {
     const [isData, setIsData] = useState(null);
     const [error, setError] = useState(null);  // Error ke liye state
+    const [filteredUsers, setFilteredUsers] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,6 +13,7 @@ function Admin() {
                 const response = await axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json");
                 console.log(response.data);
                 setIsData(response.data); // Data set karna
+                setFilteredUsers(response.data);
             } catch (error) {
                 setError(`Error: ${error.response ? error.response.status : 'Unknown'} - ${error.message}`); // Error message set karna
                 console.error(error); // Log error for debugging
