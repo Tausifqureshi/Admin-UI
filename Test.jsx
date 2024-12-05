@@ -1,24 +1,16 @@
-// App.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Table from './components/Table/Table';
-import Pagination from './components/Table/Pagination';
+import React, { useState } from 'react';
+import TableRow from './TableRow';
+import SelectAllCheckbox from './SelectAllCheckbox';
+import SearchBar from './SearchBar';
+import Pagination from './Pagination';
 
-const App = () => {
-  const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState([]);
+const Table = ({ users }) => {
+  const [filteredUsers, setFilteredUsers] = useState(users);
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
   const [selectedRows, setSelectedRows] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    axios.get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
-      .then(response => {
-        setUsers(response.data);
-        setFilteredUsers(response.data);
-      });
-  }, []);
-
+  // Search handler
   const handleSearch = (query) => {
     setSearchQuery(query);
     const filtered = users.filter(user =>
@@ -27,9 +19,10 @@ const App = () => {
       user.role.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredUsers(filtered);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset to first page on search
   };
 
+  // Row selection handler
   const toggleRowSelection = (userId) => {
     setSelectedRows(prevSelectedRows => {
       if (prevSelectedRows.includes(userId)) {
@@ -39,42 +32,46 @@ const App = () => {
     });
   };
 
+  // Delete selected users
   const handleDeleteSelected = () => {
     setFilteredUsers(filteredUsers.filter(user => !selectedRows.includes(user.id)));
     setSelectedRows([]);
   };
 
-  const handleEdit = (userId, updatedData) => {
-    setFilteredUsers(filteredUsers.map(user =>
-      user.id === userId ? { ...user, ...updatedData } : user
-    ));
-  };
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
   return (
     <div>
-      <Table 
-        users={filteredUsers}
-        selectedRows={selectedRows}
-        onRowSelect={toggleRowSelection}
-        onDeleteSelected={handleDeleteSelected}
-        onEdit={handleEdit}
-        searchQuery={searchQuery}
-        onSearch={handleSearch}
-        onSelectAll={() => {}}
-        isAllSelected={false}
-      />
+      <SearchBar query={searchQuery} onSearch={handleSearch} />
+      <table>
+        <thead>
+          <tr>
+            <SelectAllCheckbox onSelectAll={() => {}} isAllSelected={false} />
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredUsers.map(user => (
+            <TableRow
+              key={user.id}
+              user={user}
+              onRowSelect={toggleRowSelection}
+              selectedRows={selectedRows}
+              onDelete={handleDeleteSelected}
+            />
+          ))}
+        </tbody>
+      </table>
+      <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
       <Pagination 
         totalItems={filteredUsers.length}
         itemsPerPage={10}
         currentPage={currentPage}
-        onPageChange={handlePageChange}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );
 };
 
-export default App;
+export default Table;

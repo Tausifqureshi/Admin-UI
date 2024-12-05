@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Table from "../../Testing";
+import Table from "./Table";
 
 function Admin() {
     const [isData, setIsData] = useState([]);
