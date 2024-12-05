@@ -1,11 +1,57 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ data, setIsData }) => {
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      const searchQuery = query.toLowerCase(); // Ensure searchQuery is defined here
+      const filtered = data.filter((user) =>
+        user.name.toLowerCase().includes(searchQuery) ||
+        user.email.toLowerCase().includes(searchQuery) ||
+        user.role.toLowerCase().includes(searchQuery)
+      );
+      setIsData(filtered);
+    }
+    
+    // const searchQuery = e.target.value.toLowerCase();
+    // setQuery(searchQuery);
+    // const filtered = data.filter((user) =>
+    //   user.name.toLowerCase().includes(searchQuery) ||
+    //   user.email.toLowerCase().includes(searchQuery) ||
+    //   user.role.toLowerCase().includes(searchQuery)
+    // );
+    // setIsData(filtered);
+
+
+    // Ya Approach bhi use kar sakte hain.
+    // const handleSearch = (e) => {
+    //   if (e.key === "Enter") {
+    //     const searchQuery = query.toLowerCase(); // Query ko lowercase mein convert kar rahe hain
+    //     const filtered = data.filter((user) =>
+    //       Object.values(user).some((value) =>
+    //         String(value).toLowerCase().includes(searchQuery)
+    //       )
+    //     );
+    //     setIsData(filtered);
+    //   }
+
+    
+    };
+    
   return (
     <div>
-      
-    </div>
-  )
-}
+      <input
+        type="text"
+        placeholder="Search..."
+        value={query}
+        // onChange={handleSearch}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown ={handleSearch}
 
-export default SearchBar
+      />
+    </div>
+  );
+};
+
+export default SearchBar;

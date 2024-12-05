@@ -27,7 +27,7 @@ function Admin() {
     }
 
   return <div> 
-  <Table  data={isData} />
+  <Table  data={isData} setIsData={setIsData}/>
  
   </div>; 
 }
