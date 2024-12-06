@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa"; // Importing a search icon from react-icons
 
 const SearchBar = ({ data, setIsData }) => {
   const [query, setQuery] = useState("");
@@ -40,7 +41,7 @@ const SearchBar = ({ data, setIsData }) => {
     };
     
   return (
-    <div>
+    <div className="search-container">
       <input
         type="text"
         placeholder="Search..."
@@ -48,10 +49,16 @@ const SearchBar = ({ data, setIsData }) => {
         // onChange={handleSearch}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown ={handleSearch}
-
+        className="search-input"
       />
+
+       <button onClick={handleSearch} className="search-icon">
+        <FaSearch />
+      </button>
     </div>
   );
 };
+
+
 
 export default SearchBar;
