@@ -1,7 +1,9 @@
 import React from "react";
 
 function SelectAllCheckBox() {
-  return <div>SelectAllCheckBox</div>;
+  return <div>
+  <input type="checkbox" />
+  </div>;
 }
 
 export default SelectAllCheckBox;

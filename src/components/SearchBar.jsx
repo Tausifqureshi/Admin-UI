@@ -5,7 +5,7 @@ const SearchBar = ({ data, setIsData }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.type === "click") {
       const searchQuery = query.toLowerCase(); // Ensure searchQuery is defined here
       const filtered = data.filter((user) =>
         user.name.toLowerCase().includes(searchQuery) ||
