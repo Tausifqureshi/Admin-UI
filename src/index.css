@@ -121,7 +121,7 @@ td {
   border: 1px solid #ddd;
 }
 
-button {
+/* button {
   padding: 8px 12px;
   margin: 5px;
   cursor: pointer;
@@ -133,7 +133,7 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* input[type="text"] {
   padding: 8px;
@@ -145,7 +145,7 @@ button:hover {
 
 
 /* SearchBar Styles */
-.search-container {
+/* .search-container {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -157,6 +157,7 @@ button:hover {
   border: 1px solid #ccc;
   flex-grow: 1;
   margin-right: 5px;
+  position: relative;
 }
 
 .search-icon {
@@ -169,11 +170,19 @@ button:hover {
   color: white;
   border: none;
   cursor: pointer;
+  position: absolute;
+  right: 0;
 }
 
 .search-icon:hover {
   background-color: #0056b3;
-}
+} */
+
+
+
+
+
+
 
 /* Table styles */
 th {
@@ -205,23 +214,6 @@ tr.selected {
   margin: 0 5px;
 }
 
-.search-input {
-  padding: 8px;
-  margin-right: 10px;
-  width: 200px;
-}
-
-.search-icon {
-  padding: 8px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-}
-
-.search-icon:hover {
-  background-color: #218838;
-}
 
 /* TableRow Styles */
 td {
@@ -256,6 +248,54 @@ th input[type="checkbox"] {
   width: 20px;
   height: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 40px 8px 8px; /* Add padding-right for the icon */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: #007bff; */
+  cursor: pointer;
+  padding: 2px;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+}
+
+.search-icon:hover {
+  color: #0056b3;
+}
+
 
 
 
