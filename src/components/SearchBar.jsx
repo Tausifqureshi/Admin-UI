@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 // import { FaSearch } from "react-icons/fa"; // Importing a search icon from react-icons
 
-// const SearchBar = ({ data, setIsData }) => {
+// const SearchBar = ({ data, setIsData, originalData}) => {
 //   const [query, setQuery] = useState("");
 
 //   const handleSearch = (e) => {
@@ -11,7 +11,9 @@
       
 //       if (!searchQuery) {
 //         // If query is empty, reset to original data
-//         setIsData(data);
+//         // setIsData(data);
+//         // Agar query empty ho, toh original data ko reset karein
+//         setIsData(originalData);
 //         return;
 //       }
 //       const filtered = data.filter((user) =>
@@ -49,31 +51,44 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa"; // Importing a search icon from react-icons
 
-const SearchBar = ({ data, setIsData }) => {
-  const [query, setQuery] = useState("");  // Search query state
+const SearchBar = ({ data, setIsData, originalData }) => {
+  const [query, setQuery] = useState("");
 
   const handleSearch = (e) => {
-    const searchQuery = e.target.value.toLowerCase();  // Get the query from the input
-
-    setQuery(searchQuery);  // Update the query state
+    const searchQuery = e.target.value.toLowerCase(); // Convert query to lowercase
+    setQuery(searchQuery); // Update query state
 
     if (!searchQuery) {
-      // Agar search box empty ho, toh original data ko wapas set karna
-      setIsData(data);
+      // If query is empty, reset to original data
+      setIsData(originalData);
       return;
     }
 
-    // Data ko filter karna based on search query
-    const filtered = data.filter((user) =>
-      user.name.toLowerCase().includes(searchQuery) ||
-      user.email.toLowerCase().includes(searchQuery) ||
-      user.role.toLowerCase().includes(searchQuery)
+    // Filter data based on query
+    const filtered = originalData.filter(
+      (user) =>
+        user.name.toLowerCase().includes(searchQuery) ||
+        user.email.toLowerCase().includes(searchQuery) ||
+        user.role.toLowerCase().includes(searchQuery)
     );
 
-    setIsData(filtered);  // Set the filtered data
+    setIsData(filtered); // Update filtered data
   };
 
   return (
@@ -82,10 +97,10 @@ const SearchBar = ({ data, setIsData }) => {
         type="text"
         placeholder="Search..."
         value={query}
-        onChange={handleSearch}  // Call handleSearch on input change
+        onChange={handleSearch} // Automatically handle search on each key press
         className="search-input"
       />
-      <button onClick={handleSearch} className="search-icon">
+      <button onClick={() => handleSearch({ target: { value: query } })} className="search-icon">
         <FaSearch />
       </button>
     </div>

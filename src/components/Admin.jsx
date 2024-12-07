@@ -3,8 +3,10 @@ import axios from "axios";
 import Table from "./Table";
 
 function Admin() {
-    const [isData, setIsData] = useState(null);
+    const [originalData, setOriginalData] = useState(null); // Original data store karega
+    const [isData, setIsData] = useState(null); // Filtered data manage karega
     const [error, setError] = useState(null);  // Error ke liye state
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,8 +15,8 @@ function Admin() {
                 const response = await axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json");
                 console.log(response.data);
                 setIsData(response.data); // Data set karna
-                // console.log("Data in SearchBar:", data);
-                // console.log("SetIsData in SearchBar:", setIsData);
+                setOriginalData(response.data); // Original data ko set karein
+                setIsData(response.data); // Filtered data ko bhi initialize karein
 
             } catch (error) {
                 setError(`Error: ${error.response ? error.response.status : 'Unknown'} - ${error.message}`); // Error message set karna
@@ -30,7 +32,7 @@ function Admin() {
     }
 
   return <div> 
-  <Table  data={isData} setIsData={setIsData}/>
+  <Table  data={isData} setIsData={setIsData} originalData={originalData}/>
  
   </div>; 
 }

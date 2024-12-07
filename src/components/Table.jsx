@@ -3,11 +3,11 @@ import RowActions from './RowActions'
 import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
 
-const Table = ({ data , setIsData}) => {
+const Table = ({ data , setIsData, originalData}) => {
   // const [filteredUsers, setFilteredUsers] = useState(users);
   return (
     <div>
-    <SearchBar data={data} setIsData={setIsData} />
+    <SearchBar data={data} setIsData={setIsData} originalData={originalData}/>
     <table>
       <thead>
         <tr>
