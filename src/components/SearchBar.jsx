@@ -7,11 +7,13 @@ const SearchBar = ({ data, setIsData, originalData }) => {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
       const searchQuery = query.toLowerCase(); // Ensure searchQuery is defined here
+
       if (!searchQuery) {
         // Agar query empty ho, toh original data ko reset karein
         setIsData(originalData);
         return;
       }
+
       const filtered = data.filter(
         (user) =>
           user.name.toLowerCase().includes(searchQuery) ||
@@ -37,6 +39,7 @@ const SearchBar = ({ data, setIsData, originalData }) => {
       </button>
     </div>
   );
+  
 };
 
 export default SearchBar;
