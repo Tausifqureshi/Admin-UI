@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa"; // Importing a search icon from react-icons
 
 const SearchBar = ({ data, setIsData, originalData }) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");  
   const handleSearch = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
