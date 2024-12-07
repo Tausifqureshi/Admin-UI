@@ -13,6 +13,9 @@ function Admin() {
                 const response = await axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json");
                 console.log(response.data);
                 setIsData(response.data); // Data set karna
+                // console.log("Data in SearchBar:", data);
+                // console.log("SetIsData in SearchBar:", setIsData);
+
             } catch (error) {
                 setError(`Error: ${error.response ? error.response.status : 'Unknown'} - ${error.message}`); // Error message set karna
                 console.error(error); // Log error for debugging

@@ -7,7 +7,7 @@ const Table = ({ data , setIsData}) => {
   // const [filteredUsers, setFilteredUsers] = useState(users);
   return (
     <div>
-    <SearchBar  data={data} setIsData={setIsData} />
+    <SearchBar data={data} setIsData={setIsData} />
     <table>
       <thead>
         <tr>
