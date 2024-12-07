@@ -3,7 +3,7 @@ import axios from "axios";
 import Table from "./Table";
 
 function Admin() {
-    const [isData, setIsData] = useState([]);
+    const [isData, setIsData] = useState(null);
     const [error, setError] = useState(null);  // Error ke liye state
 
     useEffect(() => {

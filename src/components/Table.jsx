@@ -21,7 +21,7 @@ const Table = ({ data , setIsData}) => {
 
            {/* <SelectAllCheckBox data={data} setIsData={setIsData}  /> */}
       <tbody>
-          {data.map(user => (
+          {data &&data.map(user => (
             
             <RowActions key={user.id} data={user} setIsData={setIsData}/>
             
