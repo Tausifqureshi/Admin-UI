@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa"; // Importing a search icon from react
 
 const SearchBar = ({ data, setIsData, originalData }) => {
   const [query, setQuery] = useState("");  
+
   const handleSearch = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
@@ -39,7 +40,7 @@ const SearchBar = ({ data, setIsData, originalData }) => {
       </button>
     </div>
   );
-  
+
 };
 
 export default SearchBar;
