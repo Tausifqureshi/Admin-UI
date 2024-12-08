@@ -1,12 +1,22 @@
 import React from "react";
+import { IonButton } from "@ionic/react";  // Import IonButton from Ionic
 
-const RowActions = ({ data, seIsDatat }) => {
+const RowActions = ({ isEditing, onEditToggle }) => {
   return (
-   <>
-    <button onClick={() => seIsDatat(data)}>Edit</button>
-    <button onClick={() => seIsDatat(data)}>Delete</button>
-    
-   </>
+    <div>
+      {isEditing ? (
+        <IonButton className="save" onClick={onEditToggle}>
+          Save
+        </IonButton>
+      ) : (
+        <IonButton className="edit" onClick={onEditToggle}>
+          Edit
+        </IonButton>
+      )}
+      <IonButton className="delete">
+        Delete
+      </IonButton>
+    </div>
   );
 };
 

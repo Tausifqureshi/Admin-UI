@@ -1,4 +1,5 @@
 import React from "react";
+import RowActions from "./RowActions";
 
 function TableRow({ data, seIsDatat }) {
   return(
@@ -9,6 +10,9 @@ function TableRow({ data, seIsDatat }) {
     <td>{data.name}</td>
     <td>{data.email}</td>
     <td>{data.role}</td>
+    <td>
+      <RowActions data={data} seIsDatat={seIsDatat} />
+    </td>
   </tr>
   )
 }

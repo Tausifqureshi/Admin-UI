@@ -1,11 +1,10 @@
 import React from 'react'
-import RowActions from './RowActions'
+// import RowActions from './RowActions'
 import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
 import TableRow from './TableRow'
 
 const Table = ({ data , setIsData, originalData}) => {
-  // const [filteredUsers, setFilteredUsers] = useState(users);
   return (
     <div>
     <SearchBar data={data} setIsData={setIsData} originalData={originalData}/>
