@@ -23,7 +23,7 @@ const Table = ({ data , setIsData, originalData}) => {
       <tbody>
           {data &&data.map(user => (
             
-            <TableRow key={user.id} data={user} setIsData={setIsData}/>
+            <TableRow key={user.id} data={user} setIsData={setIsData} originalData={originalData}/>
             
           ))}
         </tbody>

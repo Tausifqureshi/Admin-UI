@@ -14,7 +14,7 @@ function Admin() {
                 setError(null); // Error reset karna
                 const response = await axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json");
                 console.log(response.data);
-                setIsData(response.data); // Data set karna
+                // setIsData(response.data); // Data set karna
                 setOriginalData(response.data); // Original data ko set karein
                 setIsData(response.data); // Filtered data ko bhi initialize karein
 
