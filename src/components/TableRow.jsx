@@ -9,14 +9,18 @@ const TableRow = ({ data,}) => {
    
  
 
+  // Edit toggle function
   const handleEditToggle = () => setIsEditing(!isEditing);
 
+
+  // Edidting data add function
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
 
  
+   // Checkbox Select background change function
   const handleSelectRow = () => {
     setIsSelected(!isSelected);
   };
@@ -28,6 +32,8 @@ const TableRow = ({ data,}) => {
       <td>
         <input type="checkbox" onChange={handleSelectRow}/>
       </td>
+
+
       {isEditing ? (
         <>
         {/* Name input */}
