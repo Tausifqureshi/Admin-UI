@@ -1,68 +1,67 @@
-import React, { useState } from 'react';
+\import React, { useState } from "react";
+import RowActions from "./RowActions";
 
-const RowActions = ({ user, onEdit, onDelete }) => {
+const TableRow = ({ data, isSelected, onRowSelect }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editableData, setEditableData] = useState({
-    name: user.name,
-    email: user.email,
-    role: user.role,
-  });
+  const [userData, setUserData] = useState(data);
 
-  const toggleEdit = () => {
-    setIsEditing(!isEditing);
-    if (isEditing) {
-      onEdit(user.id, editableData);
-    }
-  };
+  // Toggle Edit Mode
+  const handleEditToggle = () => setIsEditing(!isEditing);
 
+  // Update User Data
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setEditableData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setUserData({ ...userData, [name]: value });
   };
 
   return (
-    <td>
+    <tr style={{ backgroundColor: isSelected ? "lightgray" : "white" }}>
+      <td>
+        <input
+          type="checkbox"
+          checked={isSelected}
+          onChange={() => onRowSelect(data.id)}
+        />
+      </td>
       {isEditing ? (
         <>
-          <input
-            type="text"
-            name="name"
-            value={editableData.name}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            name="email"
-            value={editableData.email}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            name="role"
-            value={editableData.role}
-            onChange={handleInputChange}
-          />
+          <td>
+            <input
+              type="text"
+              name="name"
+              value={userData.name}
+              onChange={handleInputChange}
+            />
+          </td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              value={userData.email}
+              onChange={handleInputChange}
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="role"
+              value={userData.role}
+              onChange={handleInputChange}
+            />
+          </td>
         </>
       ) : (
         <>
-          <span>{user.name}</span>
-          <span>{user.email}</span>
-          <span>{user.role}</span>
+          <td>{userData.name}</td>
+          <td>{userData.email}</td>
+          <td>{userData.role}</td>
         </>
       )}
-
-      
-      <button className="edit" onClick={toggleEdit}>
-        {isEditing ? 'Save' : 'Edit'}
-      </button>
-      <button className="delete" onClick={() => onDelete(user.id)}>
-        Delete
-      </button>
-    </td>
+      <td>
+        <RowActions isEditing={isEditing} onEditToggle={handleEditToggle} />
+      </td>
+    </tr>
   );
 };
 
-export default RowActions;
+export default TableRow;

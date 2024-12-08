@@ -3,8 +3,8 @@ import axios from "axios";
 import Table from "./Table";
 
 function Admin() {
-    const [originalData, setOriginalData] = useState(null); // Original data store karega
-    const [isData, setIsData] = useState(null); // Filtered data manage karega
+    const [originalData, setOriginalData] = useState([]); // Original data store karega
+    const [isData, setIsData] = useState([]); // Filtered data manage karega
     const [error, setError] = useState(null);  // Error ke liye state
 
 
@@ -32,7 +32,7 @@ function Admin() {
     }
 
   return <div> 
-  <Table  data={isData} setIsData={setIsData} originalData={originalData}/>
+  <Table  data={isData} setIsData={setIsData} originalData={originalData} setOriginalData={setOriginalData}/>
  
   </div>; 
 }

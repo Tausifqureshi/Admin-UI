@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import RowActions from "./RowActions";
 
-const TableRow = ({ data,}) => {
+const TableRow = ({ data, isSelected, onRowSelect}) => {
   
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState(data);
-  const [isSelected, setIsSelected] = useState(false);
+
    
  
 
@@ -20,17 +20,16 @@ const TableRow = ({ data,}) => {
   };
 
  
-   // Checkbox Select background change function
-  const handleSelectRow = () => {
-    setIsSelected(!isSelected);
-  };
 
   return (
     <tr style={{ backgroundColor: isSelected ? "lightgray" : "white" }}>
 
       {/* Checkbox input */}
       <td>
-        <input type="checkbox" onChange={handleSelectRow}/>
+        <input type="checkbox"
+           checked={isSelected}
+           onChange={() => onRowSelect(data.id)}
+          />
       </td>
 
 
