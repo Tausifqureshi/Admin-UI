@@ -1,27 +1,3 @@
-// import React from "react";
-// import RowActions from "./RowActions";
-
-// function TableRow({ data, seIsDatat }) {
-//   return(
-//     <tr>
-//     <td>
-//      <input type="checkbox" />
-//     </td>
-//     <td>{data.name}</td>
-//     <td>{data.email}</td>
-//     <td>{data.role}</td>
-//     <td>
-//       <RowActions data={data} seIsDatat={seIsDatat} />
-//     </td>
-//   </tr>
-//   )
-// }
-
-// export default TableRow;
-
-
-
-
 import React, { useState } from "react";
 import RowActions from "./RowActions";
 
@@ -47,11 +23,14 @@ const TableRow = ({ data,}) => {
 
   return (
     <tr style={{ backgroundColor: isSelected ? "lightgray" : "white" }}>
+
+      {/* Checkbox input */}
       <td>
         <input type="checkbox" onChange={handleSelectRow}/>
       </td>
       {isEditing ? (
         <>
+        {/* Name input */}
           <td>
             <input
               type="text"
@@ -60,6 +39,8 @@ const TableRow = ({ data,}) => {
               onChange={handleInputChange}
             />
           </td>
+
+          {/* Email input */}
           <td>
             <input
               type="email"
@@ -68,6 +49,8 @@ const TableRow = ({ data,}) => {
               onChange={handleInputChange}
             />
           </td>
+
+          {/* Role input */}
           <td>
             <input
               type="text"
@@ -88,7 +71,6 @@ const TableRow = ({ data,}) => {
         <RowActions
           isEditing={isEditing}
           onEditToggle={handleEditToggle}
-          userId={userData.id}
         />
       </td>
     </tr>
