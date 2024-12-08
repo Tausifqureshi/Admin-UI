@@ -2,6 +2,7 @@ import React from 'react'
 import RowActions from './RowActions'
 import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
+import TableRow from './TableRow'
 
 const Table = ({ data , setIsData, originalData}) => {
   // const [filteredUsers, setFilteredUsers] = useState(users);
@@ -23,7 +24,7 @@ const Table = ({ data , setIsData, originalData}) => {
       <tbody>
           {data &&data.map(user => (
             
-            <RowActions key={user.id} data={user} setIsData={setIsData}/>
+            <TableRow key={user.id} data={user} setIsData={setIsData}/>
             
           ))}
         </tbody>
