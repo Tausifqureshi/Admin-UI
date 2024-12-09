@@ -13,8 +13,8 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData}) => {
   const handleDelete = () => {
     setIsData((prevData) => prevData.filter((user) => user.id !== data.id));
   };
-
-   // Edit toggle function Delete And Save Icon Show karne ke liye.
+ 
+   //  Edit toggle function Delete And Save Icon Show karne ke liye.
    const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
 
   return (
