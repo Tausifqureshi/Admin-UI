@@ -8,7 +8,7 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData}) => {
   //   console.log(id)
   //   setIsData((prevData) => prevData.filter((user) => user.id !== id));
   // };
-
+  
   // Delete Function. Dono Tara Se delete kar sakte hai jo acah lage 
   const handleDelete = () => {
     setIsData((prevData) => prevData.filter((user) => user.id !== data.id));
