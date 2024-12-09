@@ -18,12 +18,7 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   // Log current data for debugging
   console.log('Current Data:', currentData);
 
-  // Function to handle page changes
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page); // Update the current page
-    }
-  };
+ 
 
     // Function jo all selected rows ko delete karne ka kaam karega
     const handleDeleteSelected = () => {
@@ -44,6 +39,14 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
 
   // Ab table ka data updated hai aur koi row selected nahi hai
     };
+
+
+     // Function to handle page changes
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page); // Update the current page
+    }
+  };
 
   return (
     <div>
