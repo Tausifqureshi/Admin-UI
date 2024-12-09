@@ -25,7 +25,6 @@ const TableRow = ({ data, selectedRows, setSelectedRows }) => {
  
     // Edit toggle function
     const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
-
     // Editing data add function
     const handleInputChange = (e) => {
       const { name, value } = e.target; // Form input se name aur value ko extract karte hain
