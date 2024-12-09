@@ -8,22 +8,7 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [selectedRows, setSelectedRows] = useState([]);
 
 
-
-  // Function jo ek row ko select ya deselect karti hai
-  const toggleRowSelection = (rowId) => {
-  setSelectedRows((currentSelectedRows) => {
-    // Check karte hain ki row pehle se selected hai ya nahi
-    const isAlreadySelected = currentSelectedRows.includes(rowId);
-
-    if (isAlreadySelected) {
-      // Agar row selected hai, toh row ID ko selection se hata dete hain
-      return currentSelectedRows.filter((id) => id !== rowId);
-    } else {
-      // Agar row selected nahi hai, toh row ID ko selection mein add karte hain
-      return [...currentSelectedRows, rowId];
-    }
-  });
-  };
+ 
 
 
   // Function jo selected rows ko delete karne ka kaam karega
@@ -53,12 +38,12 @@ const handleDeleteSelected = () => {
       <thead>
         <tr>
 
-        <th> 
          {/* SelectAllCheckBox component */}
+        <th> 
         <SelectAllCheckBox data={data}
         selectedRows={selectedRows}
        setSelectedRows={setSelectedRows} />
-      </th>
+        </th>
        
           <th>Name</th>
           <th>Email</th>
@@ -72,8 +57,11 @@ const handleDeleteSelected = () => {
             
             <TableRow key={user.id} 
               data={user}
-              isSelected={selectedRows.includes(user.id)}
-              onRowSelect={toggleRowSelection}/>
+              // isSelected={selectedRows.includes(user.id)}
+              // onRowSelect={toggleRowSelection}
+              selectedRows={selectedRows}
+              setSelectedRows={setSelectedRows}
+              />
             
           ))}
         </tbody>
