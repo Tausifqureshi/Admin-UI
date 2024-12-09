@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import RowActions from "./RowActions";
 
-const TableRow = ({ data, selectedRows, setSelectedRows }) => {
+const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
   const [isEditing, setIsEditing] = useState(false); // Editing mode handle karne ke liye state
   const [userData, setUserData] = useState(data); // Row ka data manage karne ke liye state
   const isSelected = selectedRows.includes(data.id); // Yeh check karta hai ki current row selected hai ya nahi
 
 
-     // Function jo ek row ko select ya deselect karti hai
+    // Function jo ek row ko select ya deselect karti hai
    const toggleRowSelection = () => {
     // State ko update karte hain selected rows manage karne ke liye
     setSelectedRows((currentSelectedRows) => {
@@ -23,15 +23,12 @@ const TableRow = ({ data, selectedRows, setSelectedRows }) => {
     });
   };
  
-    // Edit toggle function
-    const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
+   
     // Editing data add function
     const handleInputChange = (e) => {
       const { name, value } = e.target; // Form input se name aur value ko extract karte hain
       setUserData({ ...userData, [name]: value }); // Data ko update karte hain
-    };
-
- 
+    };    
 
   return (
     <tr style={{ backgroundColor: isSelected ? "lightgray" : "white" }}>
@@ -88,7 +85,10 @@ const TableRow = ({ data, selectedRows, setSelectedRows }) => {
       <td>
         <RowActions
           isEditing={isEditing} // Editing mode ko pass karte hain
-          onEditToggle={handleEditToggle} // Edit mode toggle function pass karte hain
+          setIsEditing={setIsEditing}
+          setIsData={setIsData}
+          data={data}
+         
         />
       </td>
     </tr>

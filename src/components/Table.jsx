@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
-// import RowActions from './RowActions'
 import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
 import TableRow from './TableRow'
 
 const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [selectedRows, setSelectedRows] = useState([]);
-
-
- 
 
 
   // Function jo selected rows ko delete karne ka kaam karega
@@ -42,7 +38,7 @@ const handleDeleteSelected = () => {
         <th> 
         <SelectAllCheckBox data={data}
         selectedRows={selectedRows}
-       setSelectedRows={setSelectedRows} />
+        setSelectedRows={setSelectedRows} />
         </th>
        
           <th>Name</th>
@@ -57,8 +53,8 @@ const handleDeleteSelected = () => {
             
             <TableRow key={user.id} 
               data={user}
-              // isSelected={selectedRows.includes(user.id)}
-              // onRowSelect={toggleRowSelection}
+              setIsData={setIsData}
+              setOriginalData={setOriginalData}
               selectedRows={selectedRows}
               setSelectedRows={setSelectedRows}
               />
