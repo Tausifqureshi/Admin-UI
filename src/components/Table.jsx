@@ -6,9 +6,27 @@ import Pagination from './Pagination'
 
 const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1); // Current page state
+  const rowsPerPage = 10; // 10 rows per page
 
-  // Function jo selected rows ko delete karne ka kaam karega
-const handleDeleteSelected = () => {
+  // Calculate total pages
+  const totalPages = Math.ceil(data.length / rowsPerPage);
+
+  // Paginated data (Current page data)
+  const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+
+  // Log current data for debugging
+  console.log('Current Data:', currentData);
+
+  // Function to handle page changes
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page); // Update the current page
+    }
+  };
+
+    // Function jo all selected rows ko delete karne ka kaam karega
+    const handleDeleteSelected = () => {
   // Step 1: Filter the original data to exclude selected rows
   const updatedData = originalData.filter((row) => {
     // Check karte hain ki row ID selectedRows mein included hai ya nahi
@@ -25,7 +43,7 @@ const handleDeleteSelected = () => {
   setSelectedRows([]); // Saare selected rows ko reset kar dete hain (empty karte hain)
 
   // Ab table ka data updated hai aur koi row selected nahi hai
-};
+    };
 
   return (
     <div>
@@ -66,7 +84,12 @@ const handleDeleteSelected = () => {
 
     <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
     {/* Pagination component */}
-    <Pagination users={data} />
+    <Pagination 
+    currentPage={currentPage}
+        setCurrentPage={handlePageChange}
+        totalPages={totalPages}
+
+    />
     </div>
   )
 }
