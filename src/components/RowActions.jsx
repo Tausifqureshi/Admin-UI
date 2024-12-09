@@ -1,6 +1,6 @@
 import React from "react";
 import { FaEdit, FaSave, FaTrashAlt } from "react-icons/fa";
-
+ 
 const RowActions = ({ isEditing,setIsEditing, data, setIsData}) => {
 
   // Delete Function. Dono Tara Se delete kar sakte hai jo acah lage 

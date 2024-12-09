@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa"; // Importing a search icon from react-icons
 
-const SearchBar = ({ data, setIsData, originalData }) => {
+const SearchBar = ({ data, setIsData, originalData, }) => {
   const [query, setQuery] = useState("");  
        
   const handleSearch = (e) => {
@@ -14,7 +14,6 @@ const SearchBar = ({ data, setIsData, originalData }) => {
         setIsData(originalData);
         return;
       }
-
       const filtered = data.filter(
         (user) =>
           user.name.toLowerCase().includes(searchQuery) ||

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
 import TableRow from './TableRow'
+import Pagination from './Pagination'
 
 const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [selectedRows, setSelectedRows] = useState([]);
-
 
   // Function jo selected rows ko delete karne ka kaam karega
 const handleDeleteSelected = () => {
@@ -49,6 +49,7 @@ const handleDeleteSelected = () => {
       </thead>
 
       <tbody>
+      {/* TableRow component */}
           {data.map(user => (
             
             <TableRow key={user.id} 
@@ -61,10 +62,11 @@ const handleDeleteSelected = () => {
             
           ))}
         </tbody>
-
     </table>
-    {/* <Pagination users={users} setUsers={setUsers} /> */}
+
     <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
+    {/* Pagination component */}
+    <Pagination users={data} />
     </div>
   )
 }
