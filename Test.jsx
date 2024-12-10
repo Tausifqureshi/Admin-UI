@@ -1,32 +1,7 @@
-import React, { useState } from 'react';
-import SearchBar from './SearchBar';
-import SelectAllCheckBox from './SelectAllCheckBox';
-import TableRow from './TableRow';
-import Pagination from './Pagination';
+import React from 'react';
 
-const Table = ({ data, setIsData, originalData, setOriginalData }) => {
-  const [selectedRows, setSelectedRows] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const rowsPerPage = 10; // 10 rows per page
-
-  // Calculate total pages
-  const totalPages = Math.ceil(data.length / rowsPerPage);
-
-  // Paginated data (Current page data)
-  const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
-
-  // Log current data for debugging
-  console.log('Current Data:', currentData);
-
-  // Handle delete selected rows
-  const handleDeleteSelected = () => {
-    const updatedData = originalData.filter((row) => !selectedRows.includes(row.id));
-    setOriginalData(updatedData);
-    setIsData(updatedData);
-    setSelectedRows([]);
-  };
-
-  // Function to handle page changes
+const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
+  // Handle page change logic
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page); // Update the current page
@@ -34,43 +9,38 @@ const Table = ({ data, setIsData, originalData, setOriginalData }) => {
   };
 
   return (
-    <div>
-      <SearchBar data={data} setIsData={setIsData} originalData={originalData} />
-      <table>
-        <thead>
-          <tr>
-            <th>
-              <SelectAllCheckBox data={data} selectedRows={selectedRows} setSelectedRows={setSelectedRows} />
-            </th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentData.map(user => (
-            <TableRow
-              key={user.id}
-              data={user}
-              selectedRows={selectedRows}
-              setSelectedRows={setSelectedRows}
-            />
-          ))}
-        </tbody>
-      </table>
-      <button className="delete-selected" onClick={handleDeleteSelected}>
-        Delete Selected
+    <div className="pagination">
+      <button
+        className="first-page"
+        onClick={() => handlePageChange(1)}
+        disabled={currentPage === 1}
+      >
+        First
       </button>
-
-      {/* Pagination Component */}
-      <Pagination
-        currentPage={currentPage}
-        setCurrentPage={handlePageChange}
-        totalPages={totalPages}
-      />
+      <button
+        className="previous-page"
+        onClick={() => handlePageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        Prev
+      </button>
+      <span>{`Page ${currentPage} of ${totalPages}`}</span>
+      <button
+        className="next-page"
+        onClick={() => handlePageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
+        Next
+      </button>
+      <button
+        className="last-page"
+        onClick={() => handlePageChange(totalPages)}
+        disabled={currentPage === totalPages}
+      >
+        Last
+      </button>
     </div>
   );
 };
 
-export default Table;
+export default Pagination;

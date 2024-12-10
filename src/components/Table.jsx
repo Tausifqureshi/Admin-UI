@@ -9,16 +9,16 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [currentPage, setCurrentPage] = useState(1); // Current page state
   const rowsPerPage = 10; // 10 rows per page
 
+
   // Calculate total pages
   const totalPages = Math.ceil(data.length / rowsPerPage);
+  console.log(totalPages, "totalPages");
 
   // Paginated data (Current page data)
   const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
 
   // Log current data for debugging
   console.log('Current Data:', currentData);
-
- 
 
     // Function jo all selected rows ko delete karne ka kaam karega
     const handleDeleteSelected = () => {
@@ -71,7 +71,7 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
 
       <tbody>
       {/* TableRow component */}
-          {data.map(user => (
+          {currentData.map(user => (
             
             <TableRow key={user.id} 
               data={user}
@@ -85,14 +85,21 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
         </tbody>
     </table>
 
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+    <div>
     <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
+      </div>
+
     {/* Pagination component */}
     <Pagination 
-    currentPage={currentPage}
-        setCurrentPage={handlePageChange}
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
         totalPages={totalPages}
 
     />
+    </div>
+
+     
     </div>
   )
 }
