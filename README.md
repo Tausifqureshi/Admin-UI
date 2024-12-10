@@ -21,7 +21,7 @@ This project is a simple user management system built using React.
     ```
 3. Run the application:
     ```bash
-    npm start
+    npm run dev
     ```
 
-The app will run on `http://localhost:3000`.
+The app will run on `http://localhost:5173/`.

@@ -4,102 +4,95 @@ import SelectAllCheckBox from './SelectAllCheckBox'
 import TableRow from './TableRow'
 import Pagination from './Pagination'
 
-const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
-  const [selectedRows, setSelectedRows] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const rowsPerPage = 10; // 10 rows per page
+const Table = ({ data, setIsData, originalData, setOriginalData }) => {
+  const [selectedRows, setSelectedRows] = useState([]); // Select ki gayi rows ka state
+  const [currentPage, setCurrentPage] = useState(1); // Current page ka state
+  const rowsPerPage = 10; // Har page par 10 rows dikhani hain
 
-
-  // Calculate total pages
+  // Total pages calculate karte hain
   const totalPages = Math.ceil(data.length / rowsPerPage);
   console.log(totalPages, "totalPages");
 
-  // Paginated data (Current page data)
+  // Current page ka data filter karte hain
   const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+  console.log('Current Data:', currentData); // Debug ke liye current data print karte hain
 
-  // Log current data for debugging
-  console.log('Current Data:', currentData);
+  // Function jo selected rows ko delete karega
+  const handleDeleteSelected = () => {
+    // Step 1: Original data ko filter karke sirf un rows ko rakhte hain jo selected nahi hain
+    const updatedData = originalData.filter((row) => !selectedRows.includes(row.id));
 
-    // Function jo all selected rows ko delete karne ka kaam karega
-    const handleDeleteSelected = () => {
-  // Step 1: Filter the original data to exclude selected rows
-  const updatedData = originalData.filter((row) => {
-    // Check karte hain ki row ID selectedRows mein included hai ya nahi
-    return !selectedRows.includes(row.id); // Agar row selected hai, toh usko hata dete hain
-  });
+    // Step 2: Original aur filtered data ko update karte hain
+    setOriginalData(updatedData);
+    setIsData(updatedData);
 
-  // Step 2: Update original data with the filtered data
-  setOriginalData(updatedData); // Original data ko update karte hain
+    // Step 3: Selected rows ko reset karte hain
+    setSelectedRows([]);
+  };
 
-  // Step 3: Update the filtered or displayed data
-  setIsData(updatedData); // Filtered data ko bhi updatedData ke saath sync karte hain
-
-  // Step 4: Reset the selected rows
-  setSelectedRows([]); // Saare selected rows ko reset kar dete hain (empty karte hain)
-
-  // Ab table ka data updated hai aur koi row selected nahi hai
-    };
-
-
-     // Function to handle page changes
+  // Page change handle karne ka function
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page); // Update the current page
+      setCurrentPage(page); // Current page update karte hain
     }
   };
 
   return (
     <div>
-    <SearchBar data={data} setIsData={setIsData} originalData={originalData}/>
-    <table>
-      <thead>
-        <tr>
+      {/* SearchBar component */}
+      <SearchBar data={data} setIsData={setIsData} originalData={originalData} />
 
-         {/* SelectAllCheckBox component */}
-        <th> 
-        <SelectAllCheckBox data={data}
-        selectedRows={selectedRows}
-        setSelectedRows={setSelectedRows} />
-        </th>
-       
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+      <table>
+        <thead>
+          <tr>
+            {/* SelectAllCheckBox component */}
+            <th>
+              <SelectAllCheckBox 
+                data={data}
+                selectedRows={selectedRows}
+                setSelectedRows={setSelectedRows}
+              />
+            </th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-      <tbody>
-      {/* TableRow component */}
+        <tbody>
+          {/* TableRow component */}
           {currentData.map(user => (
-            
-            <TableRow key={user.id} 
+            <TableRow 
+              key={user.id}
               data={user}
               setIsData={setIsData}
               setOriginalData={setOriginalData}
               selectedRows={selectedRows}
               setSelectedRows={setSelectedRows}
-              />
-            
+            />
           ))}
         </tbody>
-    </table>
+      </table>
 
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-    <div>
-    <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
+      <div className='pagination-container'>
+        {/* Delete Selected button */}
+        <div className='delete-button'>
+          <button 
+            className="delete-selected" 
+            onClick={handleDeleteSelected}
+          >
+            Delete Selected
+          </button>
+        </div>
+
+        {/* Pagination component */}
+        <Pagination 
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+          totalPages={totalPages}
+        />
       </div>
-
-    {/* Pagination component */}
-    <Pagination 
-        currentPage={currentPage}
-        handlePageChange={handlePageChange}
-        totalPages={totalPages}
-
-    />
-    </div>
-
-     
     </div>
   )
 }
