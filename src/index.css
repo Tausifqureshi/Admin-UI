@@ -68,7 +68,6 @@ body {
   color: #0056b3;
 }
 
-
 /* Table Styles */
 table {
   width: 100%;
@@ -88,38 +87,10 @@ th {
   color: white;
   text-transform: uppercase;
 }
-
-
-tr.selected {
-  background-color: #f0f0f0;
-  /* background-color: yellow; */
-}
-
-.delete-selected {
-  background-color: #dc3545;
-  border-radius: 4px;
-}
-
-.delete-selected:hover {
-  background-color: #c82333;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  margin: 0 5px;
-}
-
-
 /* TableRow Styles */
 td input[type="checkbox"] {
   margin-right: 10px;
 }
-
 
 /* RowActions styles */
 button {
@@ -167,16 +138,69 @@ th input[type="checkbox"] {
 }
 
 
+/* Pagination Styles */
+/* Pagination Container */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+}
 
+/* Delete Selected Button */
+.delete-selected {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.delete-selected:hover {
+  background-color: #d62828;
+}
 
+/* Pagination Buttons */
+.pagination {
+  display: flex;
+  gap: 5px;
+}
 
+.pagination button {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.3s ease;
+}
 
+/* Hover effect for buttons */
+.pagination button:hover {
+  background-color: #007bff;
+  color: white;
+}
 
+/* Active Page Button */
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
 
-
-
-
+/* Disabled Buttons */
+.pagination button:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
 
 
 

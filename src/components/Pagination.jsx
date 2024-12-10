@@ -6,6 +6,7 @@ const Pagination = ({ currentPage, totalPages,  handlePageChange }) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   return (
+    
     <div className="pagination">
       {/* First Page Button */}
       <button 
@@ -54,7 +55,10 @@ const Pagination = ({ currentPage, totalPages,  handlePageChange }) => {
         Last
       </button>
     </div>
+
   );
+
+
 };
        
 export default Pagination;

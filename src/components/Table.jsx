@@ -72,7 +72,6 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
       <tbody>
       {/* TableRow component */}
           {currentData.map(user => (
-            
             <TableRow key={user.id} 
               data={user}
               setIsData={setIsData}
@@ -82,16 +81,17 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
               />
             
           ))}
-        </tbody>
+      </tbody>
+
     </table>
 
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-    <div>
+    <div className='pagination-container'>
+    <div className='delete-button'>
     <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
-      </div>
+    </div>
 
-    {/* Pagination component */}
-    <Pagination 
+     {/* Pagination component */}
+     <Pagination 
         currentPage={currentPage}
         handlePageChange={handlePageChange}
         totalPages={totalPages}
