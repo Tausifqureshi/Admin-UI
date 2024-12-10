@@ -104,6 +104,6 @@ const Pagination = ({ currentPage, totalPages,  handlePageChange }) => {
     </div>
   );
 };
-     
+       
 export default Pagination;
    
