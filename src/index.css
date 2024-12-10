@@ -171,7 +171,8 @@ th input[type="checkbox"] {
 }
 
 .pagination button {
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  background-color: #007bff;
   border: 1px solid #ddd;
   padding: 8px 12px;
   border-radius: 4px;
@@ -189,15 +190,15 @@ th input[type="checkbox"] {
 
 /* Active Page Button */
 .pagination button.active {
-  background-color: #007bff;
-  color: white;
+  background-color: #f1f1f1;
+  color: #007bff;
   font-weight: bold;
 }
 
 /* Disabled Buttons */
 .pagination button:disabled {
   background-color: #e0e0e0;
-  color: #999;
+  color: #ccc;
   cursor: not-allowed;
   border-color: #ccc;
 }
