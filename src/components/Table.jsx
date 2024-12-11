@@ -21,9 +21,9 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
     // Function jo all selected rows ko delete karne ka kaam karega
     const handleDeleteSelected = () => {
   // Step 1: Filter the original data to exclude selected rows
-  const updatedData = originalData.filter((row) => {
+  const updatedData = data.filter((row) => {
     // Check karte hain ki row ID selectedRows mein included hai ya nahi
-    return !selectedRows.includes(row.id); // Agar row selected hai, toh usko hata dete hain
+  return !selectedRows.includes(row.id); // Agar row selected hai, toh usko hata dete hain
   });
 
   // Step 2: Update original data with the filtered data
@@ -33,9 +33,22 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   setIsData(updatedData); // Filtered data ko bhi updatedData ke saath sync karte hain
 
   // Step 4: Reset the selected rows
-  setSelectedRows([]); // Saare selected rows ko reset kar dete hain (empty karte hain)
-
+  // setSelectedRows([]); // Saare selected rows ko reset kar dete hain (empty karte hain)
   // Ab table ka data updated hai aur koi row selected nahi hai
+
+
+    // Reset selected rows to remove current page rows
+    setSelectedRows((prevSelected) => {
+      const currentPageIds = currentData.map((row) => row.id);
+      return prevSelected.filter((id) => !currentPageIds.includes(id));
+    });
+
+    // Adjust the current page if necessary
+    setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
+
+
+
+
   };
 
 
@@ -57,7 +70,9 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
         <th> 
         <SelectAllCheckBox data={data}
         selectedRows={selectedRows}
-        setSelectedRows={setSelectedRows} />
+        setSelectedRows={setSelectedRows} 
+        currentData={currentData}      
+        />
         </th>
        
           <th>Name</th>
