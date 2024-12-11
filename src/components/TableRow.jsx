@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import RowActions from "./RowActions";
 
-const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
+const TableRow = ({ data,setIsData, selectedRows, setSelectedRows,
+  editingRowId,
+  setEditingRowId,
+  isAnyRowEditing, // New prop for checking if any row is in edit mode
+ }) => {
   const [isEditing, setIsEditing] = useState(false); // Editing mode handle karne ke liye state
   const [userData, setUserData] = useState(data); // Row ka data manage karne ke liye state
   const isSelected = selectedRows.includes(data.id); // Yeh check karta hai ki current row selected hai ya nahi
@@ -38,8 +42,8 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
         <input type="checkbox"
         checked={isSelected} // Check karta hai ki row selected hai ya nahi
         onChange={toggleRowSelection} // Row selection toggle karta hai
-           
-          />
+        disabled={isAnyRowEditing && !isEditing} // Disable checkbox if any row is editing           
+        />
       </td>
 
 
@@ -88,6 +92,9 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
           setIsEditing={setIsEditing}
           setIsData={setIsData}
           data={data}
+          isAnyRowEditing={isAnyRowEditing} // New prop to manage button states
+          setEditingRowId={setEditingRowId}
+          currentRowId={data.id}
          
         />
       </td>

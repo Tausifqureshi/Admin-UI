@@ -9,7 +9,9 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [currentPage, setCurrentPage] = useState(1);  // Current page ka state
   const rowsPerPage = 10; // Har page par 10 rows dikhani hain
 
-
+  const [editingRowId, setEditingRowId] = useState(null); // Currently editing row ID
+  const isAnyRowEditing = editingRowId !== null; // Check if any row is editing
+  
    // Total pages calculate karte hain
   const totalPages = Math.ceil(data.length / rowsPerPage);
   console.log(totalPages, "totalPages");
@@ -37,14 +39,20 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   // Ab table ka data updated hai aur koi row selected nahi hai
 
 
-    // Reset selected rows to remove current page rows
-    setSelectedRows((prevSelected) => {
-      const currentPageIds = currentData.map((row) => row.id);
-      return prevSelected.filter((id) => !currentPageIds.includes(id));
-    });
+   // Step 4: Selected rows ko reset karte hain
+setSelectedRows((prevSelected) => {
+  // 1. `currentData` se current page ki saari row IDs ko collect karte hain
+  // `map()` function se hum `currentData` ke har row ki `id` ko ek nayi array mein convert karte hain
+  const currentPageIds = currentData.map((row) => row.id);
 
-    // Adjust the current page if necessary
-    setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
+  // 2. `prevSelected` ko filter karte hain jisme se hum un rows ko nikaalte hain jo current page par hain
+  // `filter()` function ka use karke hum un `id` ko hata dete hain jo `currentPageIds` mein maujood hain
+  return prevSelected.filter((id) => !currentPageIds.includes(id));
+});
+
+// Agar updatedData empty hai (length 0), toh current page ko page 1 pe set karo, warna current page ko waise ka waise rakhna
+setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
+
 
 
 
@@ -71,7 +79,8 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
         <SelectAllCheckBox data={data}
         selectedRows={selectedRows}
         setSelectedRows={setSelectedRows} 
-        currentData={currentData}      
+        currentData={currentData}  
+        isAnyRowEditing={isAnyRowEditing} // Pass editing status    
         />
         </th>
        
@@ -91,6 +100,10 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
               setOriginalData={setOriginalData}
               selectedRows={selectedRows}
               setSelectedRows={setSelectedRows}
+
+              editingRowId={editingRowId}
+              setEditingRowId={setEditingRowId}
+              isAnyRowEditing={isAnyRowEditing} // Pass editing status
               />
             
           ))}

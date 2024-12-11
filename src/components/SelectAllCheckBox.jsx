@@ -46,38 +46,38 @@
 
 
 
-
-
 import React from 'react';
 
 const SelectAllCheckBox = ({ currentData, selectedRows, setSelectedRows }) => {
-  // Handle "Select All" logic for current page
+  // "Select All" ka logic handle karna current page ke liye
   const handleSelectAll = (e) => {
-    const isChecked = e.target.checked;
+    const isChecked = e.target.checked; // Checkbox ka state check kar rahe hain
 
     if (isChecked) {
-      // Add current page rows to selectedRows
-      const currentPageIds = currentData.map((row) => row.id);
-      setSelectedRows((prevSelected) => [...new Set([...prevSelected, ...currentPageIds])]);
+      // Agar checkbox checked hai to current page ke rows ko selectedRows mein daal do
+      const currentPageIds = currentData.map((row) => row.id); // Current page ke sabhi row IDs
+      setSelectedRows((prevSelected) => [
+        ...new Set([...prevSelected, ...currentPageIds]), // Previous selected rows ke saath current page ke rows add kar rahe hain
+      ]);
     } else {
-      // Remove current page rows from selectedRows
-      const currentPageIds = currentData.map((row) => row.id);
+      // Agar checkbox unchecked hai to current page ke rows ko selectedRows se hata do
+      const currentPageIds = currentData.map((row) => row.id); // Current page ke row IDs
       setSelectedRows((prevSelected) =>
-        prevSelected.filter((id) => !currentPageIds.includes(id))
+        prevSelected.filter((id) => !currentPageIds.includes(id)) // Selected rows se current page ke rows ko remove karna
       );
     }
   };
 
+  // Yeh check kar raha hai ki current page ke saare rows selected hain ya nahi
   const isAllSelected = currentData.every((row) => selectedRows.includes(row.id));
 
   return (
     <input
       type="checkbox"
-      onChange={handleSelectAll}
-      checked={isAllSelected}
+      onChange={handleSelectAll} // Checkbox change hone par handleSelectAll function call hoga
+      checked={isAllSelected} // Agar current page ke saare rows selected hain, to checkbox checked hoga
     />
   );
 };
 
 export default SelectAllCheckBox;
-
