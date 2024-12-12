@@ -81,7 +81,15 @@ td input[type="checkbox"] {
   margin-right: 10px;
 }
 
+td input[type="checkbox"]:disabled{
+  background-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
 /* RowActions styles */
+
 button {
   padding: 8px 12px;
   margin: 5px;
@@ -118,6 +126,22 @@ button.delete:hover {
   background-color: #c82333;
 }
 
+.btn-disabled button:disabled {
+  background-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
+
+.btn-disabled button:disabled:hover {
+  background-color: #e0e0e0; /* Same as default background */
+  color: #ccc; /* Same as default text color */
+  border-color: #ccc; /* Same as default border */
+  cursor: not-allowed; /* Ensure the cursor stays disabled */
+}
+
+
 /* SelectAllCheckbox styles */
 th input[type="checkbox"] {
   margin: 0;
@@ -126,6 +150,12 @@ th input[type="checkbox"] {
   height: 20px;
 }
 
+th input[type="checkbox"]:disabled {
+  background-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
 
 /* Pagination Styles */
 /* Pagination Container */

@@ -8,10 +8,10 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [selectedRows, setSelectedRows] = useState([]); // Select ki gayi rows ka state
   const [currentPage, setCurrentPage] = useState(1);  // Current page ka state
   const rowsPerPage = 10; // Har page par 10 rows dikhani hain
-
   const [editingRowId, setEditingRowId] = useState(null); // Currently editing row ID
-  const isAnyRowEditing = editingRowId !== null; // Check if any row is editing
-  
+  const isDisabled = editingRowId !== null; // Disable SelectAllCheckBox when any row is in edit mode
+
+
    // Total pages calculate karte hain
   const totalPages = Math.ceil(data.length / rowsPerPage);
   console.log(totalPages, "totalPages");
@@ -21,7 +21,7 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   console.log('Current Data:', currentData);  // Debug ke liye current data print karte hain
 
     // Function jo all selected rows ko delete karne ka kaam karega
-    const handleDeleteSelected = () => {
+   const handleDeleteSelected = () => {
   // Step 1: Filter the original data to exclude selected rows
   const updatedData = data.filter((row) => {
     // Check karte hain ki row ID selectedRows mein included hai ya nahi
@@ -80,7 +80,8 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
         selectedRows={selectedRows}
         setSelectedRows={setSelectedRows} 
         currentData={currentData}  
-        isAnyRowEditing={isAnyRowEditing} // Pass editing status    
+        isDisabled={isDisabled}
+
         />
         </th>
        
@@ -100,10 +101,9 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
               setOriginalData={setOriginalData}
               selectedRows={selectedRows}
               setSelectedRows={setSelectedRows}
-
               editingRowId={editingRowId}
               setEditingRowId={setEditingRowId}
-              isAnyRowEditing={isAnyRowEditing} // Pass editing status
+              
               />
             
           ))}

@@ -48,7 +48,7 @@
 
 import React from 'react';
 
-const SelectAllCheckBox = ({ currentData, selectedRows, setSelectedRows }) => {
+const SelectAllCheckBox = ({ currentData, selectedRows, setSelectedRows,isDisabled }) => {
   // "Select All" ka logic handle karna current page ke liye
   const handleSelectAll = (e) => {
     const isChecked = e.target.checked; // Checkbox ka state check kar rahe hain
@@ -76,6 +76,7 @@ const SelectAllCheckBox = ({ currentData, selectedRows, setSelectedRows }) => {
       type="checkbox"
       onChange={handleSelectAll} // Checkbox change hone par handleSelectAll function call hoga
       checked={isAllSelected} // Agar current page ke saare rows selected hain, to checkbox checked hoga
+      disabled={isDisabled} // Checkbox disable karne ka logic
     />
   );
 };
