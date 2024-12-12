@@ -16,15 +16,15 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, edi
   // };
   
    //  Edit toggle function Delete And Save Icon Show karne ke liye.
-   const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
+  //  const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
 
-  // const handleEditToggle = () => {
-  //   if (isEditing) {
-  //     setEditingRowId(null); // Exit editing mode on Save
-  //   } else {
-  //     setEditingRowId(currentRowId); // Enter editing mode for this row
-  //   }
-  // };
+  const handleEditToggle = () => {
+    if (isEditing) {
+      setEditingRowId(null); // Exit editing mode on Save
+    } else {
+      setEditingRowId(currentRowId); // Enter editing mode for this row
+    }
+  };
   
 
   return (
@@ -39,7 +39,7 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, edi
       {/* <button className="delete" onClick={handleDelete} 
       disabled={isDisabled}
       > */}
-      <button className="delete" onClick={()=>{handleDelete(currentRowId)}}
+      <button className="delete" onClick={()=>{handleDelete(data.id)}}
       disabled={isDisabled}
       >
        <FaTrashAlt />

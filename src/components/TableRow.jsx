@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import RowActions from "./RowActions";
 
-const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
+const TableRow = ({ data,setIsData, selectedRows, setSelectedRows, 
+  editingRowId, setEditingRowId
+ }) => {
   const [isEditing, setIsEditing] = useState(false); // Editing mode handle karne ke liye state
   const [userData, setUserData] = useState(data); // Row ka data manage karne ke liye state
   const isSelected = selectedRows.includes(data.id); // Yeh check karta hai ki current row selected hai ya nahi
-  // const 
+  const isDisabled = editingRowId !== null && !isEditing;
 
     // Function jo ek row ko select ya deselect karti hai
    const toggleRowSelection = () => {
@@ -38,7 +40,7 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
         <input type="checkbox"
         checked={isSelected} // Check karta hai ki row selected hai ya nahi
         onChange={toggleRowSelection} // Row selection toggle karta hai
-        // disabled={isEditing} // Jab editing mode me ho to checkbox disable
+        disabled={isDisabled} // Jab editing mode me ho to checkbox disable
            
         />
       </td>
@@ -89,7 +91,10 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows }) => {
           setIsEditing={setIsEditing}
           setIsData={setIsData}
           data={data}
-          // disableActions={isEditing} // Disable logic ko pass karte hain
+
+          editingRowId={editingRowId} 
+          setEditingRowId={setEditingRowId}
+          disableActions={isDisabled} // Disable logic ko pass karte hain
          
         />
       </td>
