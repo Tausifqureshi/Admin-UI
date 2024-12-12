@@ -79,6 +79,7 @@ th {
 /* TableRow Styles */
 td input[type="checkbox"] {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 td input[type="checkbox"]:disabled{
@@ -148,6 +149,7 @@ th input[type="checkbox"] {
   padding: 0;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 th input[type="checkbox"]:disabled {

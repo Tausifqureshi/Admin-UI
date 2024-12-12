@@ -106,3 +106,70 @@ const TableRow = ({
 };
 
 export default TableRow;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// RowAction
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { FaEdit, FaSave, FaTrashAlt } from "react-icons/fa";
+
+// const RowActions = ({
+//   isEditing,
+//   setIsData,
+//   currentRowId,
+//   editingRowId,
+//   setEditingRowId,
+//   isDisabled,
+// }) => {
+//   const handleDelete = () => {
+//     setIsData((prevData) => prevData.filter((user) => user.id !== currentRowId));
+//   };
+
+//   const handleEditToggle = () => {
+//     if (isEditing) {
+//       setEditingRowId(null);
+//     } else {
+//       setEditingRowId(currentRowId);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <button className={isEditing ? "save" : "edit"} 
+//       onClick={handleEditToggle} disabled={isDisabled}>
+//         {isEditing ? <FaSave /> : <FaEdit />}
+//       </button>
+//       <button className="delete" onClick={handleDelete} disabled={isDisabled}>
+//         <FaTrashAlt />
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default RowActions;
+

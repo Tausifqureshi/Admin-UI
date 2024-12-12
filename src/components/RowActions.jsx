@@ -16,21 +16,21 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, edi
   // };
   
    //  Edit toggle function Delete And Save Icon Show karne ke liye.
-  //  const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
+   const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
 
-  const handleEditToggle = () => {
-    if (isEditing) {
-      setEditingRowId(null); // Exit editing mode on Save
-    } else {
-      setEditingRowId(currentRowId); // Enter editing mode for this row
-    }
-  };
+  // const handleEditToggle = () => {
+  //   if (isEditing) {
+  //     setEditingRowId(null); // Exit editing mode on Save
+  //   } else {
+  //     setEditingRowId(currentRowId); // Enter editing mode for this row
+  //   }
+  // };
   
 
   return (
     <div className="btn-disabled">
       <button className={isEditing ? "save" : "edit"} onClick={handleEditToggle}
-      // disabled={isDisabled}
+      disabled={isDisabled}
       >
         {/* {isEditing ? "Save" : "Edit"} */}
         {isEditing ? <FaSave /> : <FaEdit />}
@@ -40,7 +40,7 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, edi
       disabled={isDisabled}
       > */}
       <button className="delete" onClick={()=>{handleDelete(currentRowId)}}
-      // disabled={isDisabled}
+      disabled={isDisabled}
       >
        <FaTrashAlt />
       </button>
@@ -59,52 +59,6 @@ export default RowActions;
 
 
 
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import { FaEdit, FaSave, FaTrashAlt } from "react-icons/fa";
-
-// const RowActions = ({
-//   isEditing,
-//   setIsData,
-//   currentRowId,
-//   editingRowId,
-//   setEditingRowId,
-//   isDisabled,
-// }) => {
-//   const handleDelete = () => {
-//     setIsData((prevData) => prevData.filter((user) => user.id !== currentRowId));
-//   };
-
-//   const handleEditToggle = () => {
-//     if (isEditing) {
-//       setEditingRowId(null);
-//     } else {
-//       setEditingRowId(currentRowId);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <button className={isEditing ? "save" : "edit"} 
-//       onClick={handleEditToggle} disabled={isDisabled}>
-//         {isEditing ? <FaSave /> : <FaEdit />}
-//       </button>
-//       <button className="delete" onClick={handleDelete} disabled={isDisabled}>
-//         <FaTrashAlt />
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default RowActions;
 
 
 
