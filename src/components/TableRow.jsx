@@ -10,7 +10,7 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows,
   const [isEditing, setIsEditing] = useState(false); // Editing mode handle karne ke liye state
   const [userData, setUserData] = useState(data); // Row ka data manage karne ke liye state
   const isSelected = selectedRows.includes(data.id); // Yeh check karta hai ki current row selected hai ya nahi
-  const isDisabled = editingRowId !== null && !isEditing;
+  // const isDisabled = editingRowId !== null && !isEditing;
    
 
     // Function jo ek row ko select ya deselect karti hai
@@ -47,7 +47,7 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows,
         checked={isSelected} // Check karta hai ki row selected hai ya nahi
         onChange={toggleRowSelection} // Row selection toggle karta hai
         // disabled={isAnyRowEditing && !isEditing} // Disable checkbox if any row is editing
-        disabled={isDisabled} // Disable checkbox if another row is in edit mode
+        // disabled={isDisabled} // Disable checkbox if another row is in edit mode
                  
         />
       </td>
@@ -103,7 +103,7 @@ const TableRow = ({ data,setIsData, selectedRows, setSelectedRows,
           currentRowId={data.id}
 
           editingRowId={editingRowId} // Pass editingRowId for button disable logic
-          isDisabled={isDisabled} // Disable buttons for non-edit rows
+          // isDisabled={isDisabled} // Disable buttons for non-edit rows
 
 
           

@@ -30,7 +30,7 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, edi
   return (
     <div className="btn-disabled">
       <button className={isEditing ? "save" : "edit"} onClick={handleEditToggle}
-      disabled={isDisabled}
+      // disabled={isDisabled}
       >
         {/* {isEditing ? "Save" : "Edit"} */}
         {isEditing ? <FaSave /> : <FaEdit />}
@@ -40,7 +40,7 @@ const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, edi
       disabled={isDisabled}
       > */}
       <button className="delete" onClick={()=>{handleDelete(currentRowId)}}
-      disabled={isDisabled}
+      // disabled={isDisabled}
       >
        <FaTrashAlt />
       </button>
