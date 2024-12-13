@@ -21,7 +21,7 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   console.log('Current Data:', currentData);  // Debug ke liye current data print karte hain
 
     // Function jo all selected rows ko delete karne ka kaam karega
-   const handleDeleteSelected = () => {
+  const handleDeleteSelected = () => {
   // Step 1: Filter the original data to exclude selected rows
   const updatedData = data.filter((row) => {
     // Check karte hain ki row ID selectedRows mein included hai ya nahi

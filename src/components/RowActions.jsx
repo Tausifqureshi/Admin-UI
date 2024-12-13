@@ -75,6 +75,7 @@ const RowActions = ({
 }) => {
   const handleDelete = () => {
     setIsData((prevData) => prevData.filter((user) => user.id !== data.id));
+    setEditingRowId(null); // Exit editing mode on Delete 
   };
 
   const handleEditToggle = () => {

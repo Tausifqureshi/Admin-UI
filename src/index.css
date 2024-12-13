@@ -1,72 +1,84 @@
-
-
 /* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 300;
-  background-color: #f4f4f9;
+  background-color: #f4f7fa;
+  color: #333;
 }
 
+/* App Container */
 .App {
   max-width: 900px;
   margin: 50px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
-
 
 /* SearchBar Styles */
 .search-container {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .search-input {
   width: 100%;
-  padding: 8px 40px 8px 8px; /* Add padding-right for the icon */
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: 13px 10px; /* Adjusted padding for better spacing */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #ddd;
+  outline: none;
+  background-color: #fff;
 }
 
 .search-icon {
   position: absolute;
-  top: 35%;
-  right: 10px;
+  top: 45%;
+  right: -4px;
   transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(4, 4, 6, 0.809);
+  color: #555;
   cursor: pointer;
-  padding: 2px;
-  border: none;
-  background: transparent;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  background-color: transparent;
 }
 
 .search-icon:hover {
-  color: #0056b3;
+  color: #007bff;
 }
 
 /* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  /* scroll-behavior: ; */
-  scrollbar-width: thin;
+  margin-top: 20px;
 }
+/* Table Row Hover Effect */
+tbody tr:hover {
+  background-color: #e0e0e0; /* Light grey background on hover */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+
+
 
 th,
 td {
-  padding: 10px;
+  padding: 15px;
   text-align: left;
   border: 1px solid #ddd;
 }
@@ -75,32 +87,30 @@ th {
   background-color: #007bff;
   color: white;
   text-transform: uppercase;
+  font-size: 14px;
 }
-/* TableRow Styles */
+
+td {
+  font-size: 14px;
+}
+
 td input[type="checkbox"] {
   margin-right: 10px;
   cursor: pointer;
 }
 
-td input[type="checkbox"]:disabled{
-  background-color: #e0e0e0;
-  color: #ccc;
-  cursor: not-allowed;
-  border-color: #ccc;
-}
-
-/* RowActions styles */
-
+/* Row Actions */
 button {
-  padding: 8px 12px;
+  padding: 10px 15px;
   margin: 5px;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
-/* Save Button */
 button.save {
   background-color: #007bff;
 }
@@ -109,7 +119,6 @@ button.save:hover {
   background-color: #0056b3;
 }
 
-/* Edit Button */
 button.edit {
   background-color: #28a745;
 }
@@ -118,7 +127,6 @@ button.edit:hover {
   background-color: #218838;
 }
 
-/* Delete Button */
 button.delete {
   background-color: #dc3545;
 }
@@ -127,6 +135,7 @@ button.delete:hover {
   background-color: #c82333;
 }
 
+/* Disabled Button Styles */
 .btn-disabled button:disabled {
   background-color: #e0e0e0;
   color: #ccc;
@@ -134,48 +143,40 @@ button.delete:hover {
   border-color: #ccc;
 }
 
-
 .btn-disabled button:disabled:hover {
-  background-color: #e0e0e0; /* Same as default background */
-  color: #ccc; /* Same as default text color */
-  border-color: #ccc; /* Same as default border */
-  cursor: not-allowed; /* Ensure the cursor stays disabled */
+  background-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
 }
-
 
 /* SelectAllCheckbox styles */
 th input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
 }
 
 th input[type="checkbox"]:disabled {
-  background-color: #e0e0e0;
-  color: #ccc;
+  background-color: #f4f4f4;
   cursor: not-allowed;
-  border-color: #ccc;
 }
 
 /* Pagination Styles */
-/* Pagination Container */
 .pagination-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
 }
 
-/* Delete Selected Button */
 .delete-selected {
   background-color: #e63946;
   color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 12px 18px;
+  border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -188,48 +189,32 @@ th input[type="checkbox"]:disabled {
 /* Pagination Buttons */
 .pagination {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 
 .pagination button {
-  /* background-color: #f1f1f1; */
   background-color: #007bff;
-  border: 1px solid #ddd;
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect for buttons */
-.pagination button:hover {
-  background-color: #007bff;
   color: white;
+  transition: background-color 0.3s ease;
 }
 
-/* Active Page Button */
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
 .pagination button.active {
   background-color: #f1f1f1;
   color: #007bff;
   font-weight: bold;
 }
 
-/* Disabled Buttons */
 .pagination button:disabled {
   background-color: #e0e0e0;
   color: #ccc;
   cursor: not-allowed;
   border-color: #ccc;
 }
-
-
-
-
-
-
-
-
-
-
