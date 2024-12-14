@@ -6,6 +6,7 @@ function Admin() {
     const [originalData, setOriginalData] = useState([]); // Original data store karega
     const [isData, setIsData] = useState([]); // Filtered data manage karega
     const [error, setError] = useState(null);  // Error ke liye state
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
