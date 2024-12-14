@@ -21,7 +21,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
- 
+
 /* SearchBar Styles */
 .search-container {
   position: relative;
@@ -72,9 +72,6 @@ tbody tr:hover {
   cursor: pointer; /* Change cursor to pointer */
   transition: background-color 0.3s ease; /* Smooth transition */
 }
-
-
-
 
 th,
 td {
@@ -219,16 +216,29 @@ th input[type="checkbox"]:disabled {
   border-color: #ccc;
 }
 
+/* Overlay for full-screen loader */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(211, 211, 211, 0.8); /* Light gray with opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it appears on top */
+}
 
-/* Loder Styles */
+/* Container for spinner and text */
 .loader-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
+/* Spinner styles */
 .spinner {
   width: 50px;
   height: 50px;
@@ -238,6 +248,7 @@ th input[type="checkbox"]:disabled {
   animation: spin 1s linear infinite;
 }
 
+/* Spin animation */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -247,6 +258,7 @@ th input[type="checkbox"]:disabled {
   }
 }
 
+/* Loading text */
 p {
   margin-top: 10px;
   font-size: 16px;
