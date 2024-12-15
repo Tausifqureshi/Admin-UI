@@ -1,1081 +1,206 @@
-Global Styles
-* {
+/* General Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f0f2f5;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  background-color: #f4f7fa;
-  color: #333;
-}
-
-/* App Container */
-.App {
-  max-width: 900px;
-  margin: 50px auto;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* SearchBar Styles */
-.search-container {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 13px 10px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: #ddd;
-  outline: none;
-  background-color: #fff;
-}
-
-.search-icon {
-  position: absolute;
-  top: 45%;
-  right: 10px;
-  transform: translateY(-50%);
-  color: #555;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-  background-color: transparent;
-}
-
-.search-icon:hover {
-  color: #007bff;
-}
-
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-/* Table Row Hover Effect */
-tbody tr:hover {
-  background-color: #e0e0e0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-th,
-td {
-  padding: 15px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: #007bff;
-  color: white;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-td {
-  font-size: 14px;
-}
-
-td input[type="checkbox"] {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-/* Row Actions */
-button {
-  padding: 10px 15px;
-  margin: 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-button.save {
-  background-color: #007bff;
-}
-
-button.save:hover {
-  background-color: #0056b3;
-}
-
-button.edit {
-  background-color: #28a745;
-}
-
-button.edit:hover {
-  background-color: #218838;
-}
-
-button.delete {
-  background-color: #dc3545;
-}
-
-button.delete:hover {
-  background-color: #c82333;
-}
-
-/* Disabled Button Styles */
-.btn-disabled button:disabled {
-  background-color: #e0e0e0;
-  color: #ccc;
-  cursor: not-allowed;
-  border-color: #ccc;
-}
-
-.btn-disabled button:disabled:hover {
-  background-color: #e0e0e0;
-  color: #ccc;
-  cursor: not-allowed;
-}
-
-/* SelectAllCheckbox styles */
-th input[type="checkbox"] {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-}
-
-th input[type="checkbox"]:disabled {
-  background-color: #f4f4f4;
-  cursor: not-allowed;
-}
-
-/* Pagination Styles */
-.pagination-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.delete-selected {
-  background-color: #e63946;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.delete-selected:hover {
-  background-color: #d62828;
-}
-
-/* Pagination Buttons */
-.pagination {
-  display: flex;
-  gap: 10px;
-}
-
-.pagination button {
-  background-color: #007bff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.pagination button:hover {
-  background-color: #0056b3;
-}
-
-.pagination button.active {
-  background-color: #f1f1f1;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.pagination button:disabled {
-  background-color: #e0e0e0;
-  color: #ccc;
-  cursor: not-allowed;
-  border-color: #ccc;
-}
-
-/* Overlay for full-screen loader */
-.loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(211, 211, 211, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-/* Container for spinner and text */
-.loader-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Spinner styles */
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-/* Spin animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Loading text */
-p {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #555;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .App {
-    padding: 20px;
-    margin: 20px;
-  }
-
-  th,
-  td {
-    padding: 10px;
-  }
-
-  .search-input {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  button {
-    padding: 8px 10px;
-    font-size: 12px;
-  }
-
-  .delete-selected {
-    padding: 10px 15px;
-    font-size: 12px;
-  }
-
-  .pagination button {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 600px) {
-  .App {
-    padding: 15px;
-    margin: 15px;
-  }
-
-  th,
-  td {  
-    padding: 8px;
-  }
-
-  .search-input {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  button {  
-    padding: 6px 8px;
-    font-size: 10px;  
-  }
-
-  .delete-selected {  
-    padding: 8px 10px;
-    font-size: 10px;  
-  }
-
-  .pagination button {  
-    padding: 6px 8px;
-    font-size: 10px;  
-  }
-}
-
-@media (max-width: 480px) {
-  .App {
-    padding: 15px;
-    margin: 10px;
-  }
-
-  th,
-  td {
-    font-size: 12px;
-  }
-
-  .search-container {
-    margin-bottom: 15px;
-  }
-
-  .search-input {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  button {
-    padding: 6px 8px;
-    font-size: 10px;
-  }
-
-  .delete-selected {
-    padding: 8px 10px;
-    font-size: 10px;
-  }
-
-  .pagination-container {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .pagination {
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-
-  .pagination button {
-    padding: 6px 8px;
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 360px) {
-  .App {
-    padding: 10px;
-    margin: 5px;
-  }  
-
-  th,   
-  td {    
-    font-size: 10px;  
-  }
-
-  .search-container {
-    margin-bottom: 10px;
-  }
-
-  .search-input {
-    font-size: 10px;
-    padding: 6px;
-  }
-
-  button {    
-    padding: 4px 6px;
-    font-size: 8px;  
-  }
-
-  .delete-selected {    
-    padding: 6px 8px;
-    font-size: 8px;  
-  }
-
-  .pagination button {    
-    padding: 4px 6px;
-    font-size: 8px;  
-  }
-}
-
-
-@media (max-width: 320px) {
-  .App {
-    padding: 10px;
-    margin: 5px;
-  }
-
-  th,   
-  td {    
-    font-size: 8px;  
-  }
-
-  .search-container {    
-    margin-bottom: 8px;  
-  }
-
-  .search-input {    
-    font-size: 8px;  
-    padding: 4px;  
-  }
-
-  button {    
-    padding: 2px 4px;
-    font-size: 6px;  
-  }  
-
-  .delete-selected {      
-    padding: 4px 6px;      
-    font-size: 6px;      
-  }
-
-  .pagination button {      
-    padding: 2px 4px;      
-    font-size: 6px;      
-  }
-} 
-
-
-
-@media (max-width: 280px) {
-
-  .App {
-    padding: 8px;
-    margin: 4px;
-  }
-
-  th,   
-  td {    
-    font-size: 6px;  
-  }
-
-  .search-container {    
-    margin-bottom: 6px;  
-  }
-
-  .search-input {    
-    font-size: 6px;  
-    padding: 2px;  
-  }
-
-  button {    
-    padding: 1px 2px;
-    font-size: 4px;  
-  }  
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 4px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 4px;      
-  }
-}
-
-
-
-@media (max-width: 240px) {
-  .App {
-    padding: 6px;
-    margin: 3px;
-  }
-
-  th,   
-  td {    
-    font-size: 4px;  
-  }    
-
-  .search-container {    
-    margin-bottom: 4px;  
-  }
-
-  .search-input {    
-    font-size: 10px;  
-    padding: 10px;  
-  }
-
-  button {    
-    padding: 1px 2px;
-    font-size: 4px;  
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 4px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 4px;      
-  }
-}
-
-
-@media (max-width: 200px) {
-  .App {
-    padding: 4px;
-    margin: 2px;
-  }  
-
-  th,   
-  td {    
-    font-size: 2px;  
-  }
-
-  .search-container {    
-    margin-bottom: 2px;  
-  }
-
-  .search-input {    
-    font-size: 2px;  
-    padding: 1px;  
-  }
-
-  button {    
-    padding: 1px 2px;
-    font-size: 2px;  
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 2px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 2px;      
-  }
-} 
-
-
-@media (max-width: 160px) {
-  .App {
-    padding: 2px;
-    margin: 1px;
-  }
-
-  th,   
-  td {    
-    font-size: 2px;  
-  }
-
-  .search-container {    
-    margin-bottom: 1px;  
-  }
-
-  .search-input {    
-    font-size: 2px;  
-    padding: 1px;  
-  }  
-
-  button {    
-    padding: 1px 2px;    
-    font-size: 2px;  
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 2px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 2px;      
-  }
-}
-
-
-@media (max-width: 120px) {
-  .App {
-    padding: 1px;
-    margin: 1px;
-  }  
-
-  th,   
-  td {    
-    font-size: 1px;  
-  }    
-
-  .search-container {    
-    margin-bottom: 1px;  
-  }    
-
-  .search-input {    
-    font-size: 1px;  
-    padding: 1px;  
-  }
-
-  button {      
-    padding: 1px 2px;      
-    font-size: 1px;      
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 1px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 1px;      
-  }
-} 
-
-@media (max-width: 80px) {
-  .App {
-    padding: 1px;
-    margin: 1px;
-  }  
-
-  th,   
-  td {    
-    font-size: 1px;  
-  }    
-
-  .search-container {    
-    margin-bottom: 1px;  
-  }    
-
-  .search-input {    
-    font-size: 1px;  
-    padding: 1px;  
-  }  
-
-  button {    
-    padding: 1px 2px;    
-    font-size: 1px;  
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 1px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 1px;      
-  }
-}   
-
-
-@media (max-width: 40px) {
-  .App {
-    padding: 1px;
-    margin: 1px;
-  }  
-
-  th,   
-  td {    
-    font-size: 1px;  
-  }    
-
-  .search-container {    
-    margin-bottom: 1px;  
-  }    
-
-  .search-input {    
-    font-size: 1px;  
-    padding: 1px;  
-  }  
-
-  button {    
-    padding: 1px 2px;    
-    font-size: 1px;  
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 1px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 1px;      
-  }
-} 
-
-@media (max-width: 20px) {
-  .App {
-    padding: 1px;
-    margin: 1px;
-  }  
-
-  th,   
-  td {    
-    font-size: 1px;  
-  }    
-
-  .search-container {    
-    margin-bottom: 1px;  
-  }    
-
-  .search-input {    
-    font-size: 1px;  
-    padding: 1px;  
-  }  
-
-  button {    
-    padding: 1px 2px;    
-    font-size: 1px;  
-  } 
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 1px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 1px;      
-  }
-} 
-
-
-@media (max-width: 10px) {
-  .App {
-    padding: 1px;
-    margin: 1px;
-  }  
-
-  th,   
-  td {    
-    font-size: 1px;  
-  }    
-
-  .search-container {    
-    margin-bottom: 1px;  
-  }    
-
-  .search-input {    
-    font-size: 1px;  
-    padding: 1px;  
-  }
-
-  button {    
-    padding: 1px 2px;    
-    font-size: 1px;  
-  }
-
-  .delete-selected {      
-    padding: 2px 4px;      
-    font-size: 1px;      
-  }
-
-  .pagination button {      
-    padding: 1px 2px;      
-    font-size: 1px;      
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  background-color: #f4f7fa;
-  color: #333;
-  line-height: 1.6;
 }
 
 .App {
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* SearchBar Styles */
-.search-container {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.search-input {
+.table-container {
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #f9f9f9;
-  transition: 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: #007bff;
-  background-color: #fff;
-  outline: none;
-}
-
-.search-icon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  color: #555;
-  cursor: pointer;
-}
-
-.search-icon:hover {
-  color: #007bff;
 }
 
 /* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  background-color: #fff;
 }
 
-th,
-td {
+thead {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+thead th {
   padding: 12px;
   text-align: left;
-  border: 1px solid #ddd;
+  font-size: 14px;
 }
 
-th {
-  background-color: #007bff;
-  color: white;
-  text-transform: uppercase;
+tbody tr {
+  border-bottom: 1px solid #e8e8e8;
+  transition: background-color 0.3s;
 }
 
 tbody tr:hover {
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
 }
 
-td input[type="checkbox"] {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-/* Buttons */
-button {
-  padding: 10px 15px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-button.save {
-  background-color: #007bff;
-}
-
-button.save:hover {
-  background-color: #0056b3;
-}
-
-button.edit {
-  background-color: #28a745;
-}
-
-button.edit:hover {
-  background-color: #218838;
-}
-
-button.delete {
-  background-color: #dc3545;
-}
-
-button.delete:hover {
-  background-color: #c82333;
-}
-
-/* Pagination */
-.pagination-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.pagination {
-  display: flex;
-  gap: 10px;
-}
-
-.pagination button {
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.pagination button.active {
-  background-color: #0056b3;
-  font-weight: bold;
-}
-
-.pagination button:disabled {
-  background-color: #e0e0e0;
-  color: #ccc;
-  cursor: not-allowed;
+tbody td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
 }
 
 /* Loader Styles */
-.loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  height: 100vh;
+  font-size: 24px;
+  color: #1890ff;
 }
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #007bff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.pagination button {
+  border: none;
+  outline: none;
+  background-color: #1890ff;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover:not(.active),
+.pagination button:not(:disabled):hover {
+  background-color: #40a9ff;
+}
+
+.pagination button:disabled {
+  background-color: #e8e8e8;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  background-color: #0050b3;
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn-disabled button {
+  border: none;
+  outline: none;
+  background-color: #1890ff;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-disabled button.delete {
+  background-color: #ff4d4f;
+}
+
+.btn-disabled button.delete:hover {
+  background-color: #ff7875;
+}
+
+.btn-disabled button.edit {
+  background-color: #52c41a;
+}
+
+.btn-disabled button.edit:hover {
+  background-color: #73d13d;
+}
+
+.btn-disabled button.save {
+  background-color: #0050b3;
+}
+
+/* SearchBar Styles */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 300px;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Select All Checkbox */
+.selectAllCheckBox input {
+  cursor: pointer;
+  transform: scale(1.2);
+  accent-color: #1890ff;
+}
+
+/* Row Styling */
+.table-row {
+  transition: background-color 0.3s;
+}
+
+.table-row input[type='text'],
+.table-row input[type='email'] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+.table-row input[type='text']:focus,
+.table-row input[type='email']:focus {
+  border-color: #1890ff;
+  outline: none;
+  box-shadow: 0 0 3px rgba(24, 144, 255, 0.5);
+}
+
+/* Delete Selected Button */
+.delete-selected {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-selected:hover {
+  background-color: #ff7875;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .App {
-    max-width: 100%;
-    padding: 15px;
+  table {
+    font-size: 12px;
   }
 
-  th,
-  td {
-    font-size: 0.85rem;
-    padding: 10px;
+  .pagination button {
+    padding: 6px 10px;
   }
 
-  button {
-    padding: 8px 10px;
-    font-size: 0.8rem;
-  }
-
-  .pagination-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  th,
-  td {
-    font-size: 0.75rem;
-    padding: 8px;
-  }
-
-  button {
-    padding: 6px 8px;
-    font-size: 0.75rem;
-  }
-
-  .search-input {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .search-icon {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .App {
-    padding: 10px;
-  }
-
-  th,
-  td {
-    font-size: 0.7rem;
-    padding: 6px;
-  }
-
-  button {
-    padding: 5px 7px;
-    font-size: 0.7rem;
-  }
-
-  .search-input {
-    font-size: 0.8rem;
-    padding: 8px;
+  .search-bar input {
+    max-width: 200px;
   }
 }

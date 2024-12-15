@@ -72,12 +72,15 @@ const SelectAllCheckBox = ({ currentData, selectedRows, setSelectedRows,isDisabl
   const isAllSelected = currentData.every((row) => selectedRows.includes(row.id));
 
   return (
+    // Checkbox
+    <div className='selectAllCheckBox'>
     <input
       type="checkbox"
       onChange={handleSelectAll} // Checkbox change hone par handleSelectAll function call hoga
       checked={isAllSelected} // Agar current page ke saare rows selected hain, to checkbox checked hoga
       disabled={isDisabled} // Checkbox disable karne ka logic
     />
+    </div>
   );
 };
 

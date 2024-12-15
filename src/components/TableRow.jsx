@@ -43,6 +43,7 @@ const TableRow = ({
 
 
   return (
+    <div className="table-row">
     <tr style={{ backgroundColor: isSelected ? "lightgray" : "" }}>
 
       {/* Checkbox input */}
@@ -127,6 +128,7 @@ const TableRow = ({
         />
       </td>
     </tr>
+    </div>
   );
 };
 

@@ -41,7 +41,7 @@ function Admin() {
      return <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}> Error: {error}</p>
     }
 
-  return <div> 
+  return <div className="App"> 
   <Table  data={isData} setIsData={setIsData} originalData={originalData} setOriginalData={setOriginalData} 
   />
  
