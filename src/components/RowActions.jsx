@@ -1,106 +1,52 @@
-// import React from "react";
-// import { FaEdit, FaSave, FaTrashAlt } from "react-icons/fa";
- 
-// const RowActions = ({ isEditing,setIsEditing, data, setIsData, currentRowId, editingRowId,setEditingRowId,isDisabled, // Disable actions for non-edit rows
-// }) => {
-
-//   // Delete Function. Dono Tara Se delete kar sakte hai jo acah lage 
-//   const handleDelete = (id) => {
-//     console.log(id)
-//     setIsData((prevData) => prevData.filter((user) => user.id !== id));
-//   };
-  
-//   // Delete Function. Dono Tara Se delete kar sakte hai jo acah lage 
-//   // const handleDelete = () => {
-//   //   setIsData((prevData) => prevData.filter((user) => user.id !== currentRowId));
-//   // };
-  
-//    //  Edit toggle function Delete And Save Icon Show karne ke liye.
-//   //  const handleEditToggle = () => setIsEditing(!isEditing); // Toggle karta hai editing mode
-
-//   const handleEditToggle = () => {
-//     if (isEditing) {
-//       setEditingRowId(null); // Exit editing mode on Save
-//     } else {
-//       setEditingRowId(currentRowId); // Enter editing mode for this row
-//     }
-//   };
-  
-
-//   return (
-//     <div className="btn-disabled">
-//       <button className={isEditing ? "save" : "edit"} onClick={handleEditToggle}
-//       disabled={isDisabled}
-//       >
-//         {/* {isEditing ? "Save" : "Edit"} */}
-//         {isEditing ? <FaSave /> : <FaEdit />}
-//        </button>
-
-//       {/* <button className="delete" onClick={handleDelete} 
-//       disabled={isDisabled}
-//       > */}
-//       <button className="delete" onClick={()=>{handleDelete(data.id)}}
-//       disabled={isDisabled}
-//       >
-//        <FaTrashAlt />
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default RowActions;
-
-
-
-
-
-
-
-
-
-
-
-
 import React from "react";
 import { FaEdit, FaSave, FaTrashAlt } from "react-icons/fa";
 
 const RowActions = ({
-  isEditing,
-  setIsEditing,
-  setIsData,
-  data,
-  editingRowId,
-  setEditingRowId,
-  isDisabled,
+  isEditing, // Abhi row edit mode me hai ya nahi
+  setIsEditing, // Edit state ko toggle karne ke liye function
+  setIsData, // Data ko update karne ke liye function
+  data, // Current row ka data
+  editingRowId, // Kaunsa row abhi edit ho raha hai
+  setEditingRowId, // Editing row ko set karne ke liye function
+  isDisabled, // Button disable karne ke liye flag
 }) => {
+  // Row delete karne ka function
   const handleDelete = () => {
     setIsData((prevData) => prevData.filter((user) => user.id !== data.id));
-    setEditingRowId(null); // Exit editing mode on Delete 
+    setEditingRowId(null); // Delete karne ke baad edit mode se bahar aana
   };
 
+  // Edit mode ko toggle karne ka function
   const handleEditToggle = () => {
     if (isEditing) {
-      setEditingRowId(null);
+      setEditingRowId(null); // Agar edit mode me hai, to exit karna
     } else {
-      setEditingRowId(data.id);
+      setEditingRowId(data.id); // Agar edit mode me nahi hai, to current row ko edit mode me lana
     }
-    setIsEditing(!isEditing);
+    setIsEditing((prevState) => !prevState); // Edit state ko toggle karna
   };
 
   return (
     <div className="btn-disabled">
-      <button  className={isEditing ? "save" : "edit"} onClick={handleEditToggle} disabled={isDisabled}>
-        {isEditing ? <FaSave /> : <FaEdit />}
+      {/* Edit aur Save Button */}
+      <button
+        className={isEditing ? "save" : "edit"}
+        onClick={handleEditToggle}
+        disabled={isDisabled} // Agar disable hai to button kaam nahi karega
+      >
+        {isEditing ? <FaSave /> : <FaEdit />} {/* Icon toggle karna */}
       </button>
-      <button  className="delete" onClick={handleDelete} disabled={isDisabled}>
-        <FaTrashAlt />
+
+      {/* Delete Button */}
+      <button
+        className="delete"
+        onClick={handleDelete}
+        disabled={isDisabled} // Agar disable hai to button kaam nahi karega
+      >
+        <FaTrashAlt /> {/* Delete icon */}
       </button>
-      
     </div>
   );
 };
 
 export default RowActions;
-  
-
-

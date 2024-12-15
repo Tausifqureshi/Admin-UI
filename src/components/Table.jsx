@@ -21,6 +21,7 @@ const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
   console.log('Current Data:', currentData);  // Debug ke liye current data print karte hain
 
+
     // Function jo all selected rows ko delete karne ka kaam karega
   const handleDeleteSelected = () => {
   // Step 1: Filter the original data to exclude selected rows
@@ -59,7 +60,6 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
 
 
   };
-
 
   // Page change handle karne ka function
   const handlePageChange = (page) => {
