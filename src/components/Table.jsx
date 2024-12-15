@@ -69,8 +69,9 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
   };
 
   return (
-    <div className="table-container">
+    <div className='App'>
     <SearchBar data={data} setIsData={setIsData} originalData={originalData}/>
+    
     <table>
       <thead>
         <tr>
