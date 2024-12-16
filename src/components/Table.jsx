@@ -72,6 +72,9 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
     <div className='App'>
     <SearchBar data={data} setIsData={setIsData} originalData={originalData}/>
     
+    <div className='scrollable-table'>
+
+    
     <table>
       <thead>
         <tr>
@@ -112,7 +115,7 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
       </tbody>
 
     </table>
-
+   </div>
     <div className='pagination-container'>
     <div className='delete-button'>
     <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>

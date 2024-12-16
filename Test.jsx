@@ -560,3 +560,101 @@ th input[type="checkbox"]:disabled {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState } from 'react';
+import SearchBar from './SearchBar';
+import SelectAllCheckBox from './SelectAllCheckBox';
+import TableRow from './TableRow';
+import Pagination from './Pagination';
+
+const Table = ({ data, setIsData, originalData, setOriginalData }) => {
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 10;
+  const [editingRowId, setEditingRowId] = useState(null);
+  const isDisabled = editingRowId !== null;
+  const totalPages = Math.ceil(data.length / rowsPerPage);
+  const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
+  return (
+    <div className="table-container">
+      <SearchBar data={data} setIsData={setIsData} originalData={originalData} />
+      
+      {/* Scrollable table container */}
+      <div className="scrollable-table">
+      
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <SelectAllCheckBox
+                  data={data}
+                  selectedRows={selectedRows}
+                  setSelectedRows={setSelectedRows}
+                  currentData={currentData}
+                  isDisabled={isDisabled}
+                />
+              </th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentData.map((user) => (
+              <TableRow
+                key={user.id}
+                data={user}
+                setIsData={setIsData}
+                setOriginalData={setOriginalData}
+                selectedRows={selectedRows}
+                setSelectedRows={setSelectedRows}
+                editingRowId={editingRowId}
+                setEditingRowId={setEditingRowId}
+              />
+            ))}
+          </tbody>
+        </table>
+
+      </div>
+
+      <div className="pagination-container">
+        <button className="delete-selected">Delete Selected</button>
+        <Pagination
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+          totalPages={totalPages}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Table;

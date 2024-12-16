@@ -221,9 +221,11 @@ th input[type="checkbox"]:disabled {
 
 .pagination button.active {
   background-color: #004080; /* Deep blue for active state */
-  color: white;
+  background-color: #f9f9f9; /* Deep blue for active state */
+  color: #333;
   font-weight: bold;
 }
+
 
 .pagination button:disabled {
   background-color: #d3d3d3; /* Light grey for disabled state */
@@ -289,28 +291,167 @@ p {
 }
 
 
+/* Scrollable table container */
+
+/* Scrollable wrapper for the table */
+.scrollable-table {
+  max-height: 400px; /* Table ki max height */
+  overflow-y: auto;  /* Scroll bar vertically */
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  border-radius: 8px; /* Rounded corners for the table */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow around the table */
+  background-color: #fff; /* Background for the table container */
+}
+
+/* Modern custom scrollbar */
+.scrollable-table::-webkit-scrollbar {
+  width: 10px; /* Scrollbar ki width */
+  height: 10px; /* Horizontal scrollbar height (optional if needed) */
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6a11cb, #2575fc); /* Gradient for thumb */
+  border-radius: 5px; /* Smooth rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
+}
+
+.scrollable-table::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+  cursor: pointer; /* Pointer cursor for better UX */
+}
+
+.scrollable-table::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for scrollbar track */
+  border-radius: 5px; /* Rounded corners for track */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
+}
+
+/* Optional: Add animation for smooth scrolling */
+.scrollable-table {
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+}
 
 
+/* All responsive styles */
 
+/* Media queries for responsive design */
+@media screen and (max-width: 980px) {}
 
+@media screen and (max-width: 950px) {}
 
+@media screen and (max-width: 900px) {}
 
+@media screen and (max-width: 850px) {}
 
+@media screen and (max-width: 800px) {}
 
+@media screen and (max-width: 750px) {}   
 
+@media screen and (max-width: 700px) {}
+  
+@media screen and (max-width: 650px) {}
+  
+@media screen and (max-width: 600px) {}
 
+@media screen and (max-width: 550px) {}
 
+@media screen and (max-width: 500px) {}
 
+@media screen and (max-width: 450px) {}
 
+@media screen and (max-width: 400px) {}
 
+@media screen and (max-width: 380px) {
+  /* Adjusting App container */
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
 
+  /* SearchBar adjustments */
+  .search-container {
+    margin-bottom: 15px;
+  }
 
+  .search-input {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
 
+  .search-icon {
+    font-size: 1rem;
+    right: -2px;
+  }
 
+  /* Table adjustments */
+  table {
+    font-size: 12px;
+  }
 
+  th,
+  td {
+    padding: 10px;
+  }
 
+  th {
+    font-size: 12px;
+  }
 
+  td {
+    font-size: 11px;
+  }
 
+  /* Scrollable table container adjustments */
+  .scrollable-table {
+    max-height: 300px; /* Reduce height for small screens */
+  }
 
+  /* Pagination container adjustments */
+  .pagination-container {
+    flex-direction: column;
+    padding: 10px;
+    background-color: #ffffff
+  }
 
+  .pagination {
+    justify-content: flex-start;
+    gap: 0px;
+    margin-top: 12px;
+  }
 
+  .pagination button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* Delete Selected Button adjustments */
+  .delete-selected {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* Row action buttons */
+  button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 350px) {}
+
+@media screen and (max-width: 300px) {}
+
+@media screen and (max-width: 250px) {}
+
+@media screen and (max-width: 200px) {}
+
+@media screen and (max-width: 150px) {}
+
+@media screen and (max-width: 100px) {}
+
+@media screen and (max-width: 50px) {}
+
+@media screen and (max-width: 25px) {}
+
+@media screen and (max-width: 10px) {}
