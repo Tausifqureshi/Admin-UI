@@ -336,9 +336,75 @@ p {
 
 /* All responsive styles */
 
-@media screen and (max-width: 980px) {}
+@media screen and (max-width: 980px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
 
-@media screen and (max-width: 950px) {}
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  .search-input {
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  }
+
+  table {
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  } 
+
+  .scrollable-table {
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination {
+    margin-top: 10px;
+  }
+
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .loader-overlay {
+    font-size: 14px;
+  }
+
+  .loader-container {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+}
 
 @media screen and (max-width: 900px) {}
 
@@ -360,6 +426,8 @@ p {
 
 @media screen and (max-width: 450px) {}
 
+
+/* Competent devices */
 @media screen and (max-width: 400px) {
   .App {
     margin: 20px 10px;
@@ -862,7 +930,7 @@ button {
   }
 
   .pagination {  
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     justify-content: center;
     
@@ -935,7 +1003,7 @@ button {
   }
 
   .pagination {  
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     justify-content: center;
     
@@ -1007,7 +1075,7 @@ button {
   }
 
   .pagination {  
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     justify-content: center;
     
@@ -1079,7 +1147,7 @@ button {
   }
 
   .pagination {   
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     justify-content: center;
     
@@ -1155,7 +1223,7 @@ button {
   }
 
   .pagination {   
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     justify-content: center;
   } 
@@ -1227,7 +1295,7 @@ button {
   }
 
   .pagination {   
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     /* justify-content: center; */
     flex-wrap: wrap;
@@ -1301,7 +1369,7 @@ button {
   }
 
   .pagination {   
-    gap: 0px;
+    gap: 10px;
     margin-top: 10px;
     justify-content: center;
   } 
