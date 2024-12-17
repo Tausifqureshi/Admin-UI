@@ -173,6 +173,7 @@ th input[type="checkbox"]:disabled {
 /* Pagination Buttons */
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
@@ -335,7 +336,6 @@ p {
 
 /* All responsive styles */
 
-/* Media queries for responsive design */
 @media screen and (max-width: 980px) {}
 
 @media screen and (max-width: 950px) {}
@@ -363,95 +363,872 @@ p {
 @media screen and (max-width: 400px) {}
 
 @media screen and (max-width: 380px) {
-  /* Adjusting App container */
+   /* Adjusting App container */
+ .App {
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+/* SearchBar adjustments */
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input {
+  font-size: 14px;
+  padding: 10px 8px;
+}
+
+.search-icon {
+  font-size: 1rem;
+  right: -2px;
+}
+
+/* Table adjustments */
+table {
+  font-size: 12px;
+  margin: .3rem;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  font-size: 12px;
+}
+
+td {
+  font-size: 11px;
+}
+
+/* Scrollable table container adjustments */
+.scrollable-table {
+  max-height: 300px; /* Reduce height for small screens */
+  margin: .2rem;
+}
+
+/* Pagination container adjustments */
+.pagination-container {
+  flex-direction: column;
+  padding: 10px;
+  background-color: #ffffff
+}
+
+.pagination {
+  justify-content: flex-start;
+  gap: 0px;
+  margin-top: 12px;
+}
+
+.pagination button {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+/* Delete Selected Button adjustments */
+.delete-selected {
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+/* Row action buttons */
+button {
+  font-size: 11px;
+  padding: 9px 12px;
+}
+
+}
+
+@media screen and (max-width: 360px) {
   .App {
-    margin: 20px 10px;
-    padding: 20px;
+    margin: 15px 5px;
+    padding: 15px;
   }
 
-  /* SearchBar adjustments */
   .search-container {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .search-input {
-    font-size: 14px;
-    padding: 10px 8px;
+    font-size: 12px;
+    padding: 8px 6px;
+    width: 97%;
   }
 
   .search-icon {
-    font-size: 1rem;
-    right: -2px;
+    font-size: 0.8rem;
+    right: -1px;
   }
 
-  /* Table adjustments */
   table {
-    font-size: 12px;
+    font-size: 10px;
+    margin: .3rem;
   }
 
   th,
   td {
-    padding: 10px;
+    padding: 8px;
   }
 
   th {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   td {
-    font-size: 11px;
+    font-size: 9px;
   }
 
-  /* Scrollable table container adjustments */
   .scrollable-table {
-    max-height: 300px; /* Reduce height for small screens */
+    max-height: 250px;
+    margin: .2rem;
   }
 
-  /* Pagination container adjustments */
   .pagination-container {
-    flex-direction: column;
-    padding: 10px;
-    background-color: #ffffff
+    padding: 8px;
   }
 
   .pagination {
-    justify-content: flex-start;
     gap: 0px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .pagination button {
-    font-size: 12px;
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  .delete-selected {
+    font-size: 10px;
     padding: 6px 10px;
   }
 
-  /* Delete Selected Button adjustments */
-  .delete-selected {
-    font-size: 12px;
-    padding: 8px 12px;
+  button {
+    font-size: 10px;
+    padding: 6px 10px;
   }
 
-  /* Row action buttons */
+  
+}
+
+@media screen and (max-width: 320px) {
+  .App {
+    margin: 15px 5px;
+    padding: 15px;
+  }
+
+  .search-container {
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;
+  }
+
+  table {
+    font-size: 10px;
+    margin: .3rem;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  th {
+    font-size: 10px;
+  } 
+
+  td {
+    font-size: 9px;
+  }
+
+  .scrollable-table {
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {
+    padding: 8px;
+  }
+
+  .pagination {  
+    gap: 0px;
+    margin-top: 10px;
+  }
+
+  .pagination button {  
+    font-size: 8px;
+    padding: 8px 8px;
+  }
+
+  .delete-selected {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
   button {
-    font-size: 12px;
-    padding: 8px 12px;
+    font-size: 10px;
+    padding: 6px 10px;
   }
 }
 
-@media screen and (max-width: 350px) {}
+@media  screen and (max-width: 300px) {
+  .App {
+    margin: 15px 5px;
+    padding: 15px;
+  }
 
-@media screen and (max-width: 300px) {}
+  .search-container {  
+    margin-bottom: 10px;
+  }
 
-@media screen and (max-width: 250px) {}
+  .search-input {  
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
 
-@media screen and (max-width: 200px) {}
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;  
+  }     
 
-@media screen and (max-width: 150px) {}
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  }
 
-@media screen and (max-width: 100px) {}
+  th, 
+  td {  
+    padding: 8px;   
+  } 
 
-@media screen and (max-width: 50px) {}
+  th {  
+    font-size: 10px;  
+  } 
 
-@media screen and (max-width: 25px) {}
+  td {  
+    font-size: 9px;  
+  } 
 
-@media screen and (max-width: 10px) {}
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {  
+    padding: 8px;
+  } 
+
+  .pagination {  
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+  } 
+
+  .pagination button {  
+    font-size:11px;
+    padding: 5px 8px;
+  }
+
+  .delete-selected {  
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  button {  
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (max-width: 270px) {
+  .App {
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  } 
+
+  .search-container {  
+    margin-bottom: 10px;
+  }
+
+  .search-input {  
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;  
+  } 
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {  
+    padding: 8px;  
+  } 
+
+  th {  
+    font-size: 10px;  
+  } 
+
+  td {  
+    font-size: 9px;  
+  } 
+
+  .scrollable-table {
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {  
+    padding: 8px;
+  }
+
+  .pagination {  
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+    
+  }
+
+  .pagination button {    
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+
+  .delete-selected {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .App {
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .search-container {
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    font-size: 12px;
+    padding: 8px 6px;
+    width: 97%;
+  }   
+
+  .search-icon {
+    font-size: 0.8rem;
+    right: -1px;
+  }
+
+  table {
+    font-size: 10px;
+    margin: .3rem;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  th {  
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 9px;  
+  }
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {
+    padding: 8px;
+  }
+
+  .pagination {  
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+    
+  }
+
+  .pagination button {    
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+
+  .delete-selected {  
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+
+  button {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+}
+
+@media screen and (max-width:225px) {
+  .App {
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .search-container {  
+    margin-bottom: 10px;
+  }
+
+  .search-input {  
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  }
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;  
+  }
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  }   
+
+  th,
+  td {  
+    padding: 8px;  
+  }
+
+  th {  
+    font-size: 10px;  
+  }
+
+  td {  
+    font-size: 9px;  
+  }
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {
+    padding: 8px;
+  }
+
+  .pagination {  
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+    
+  }
+
+  .pagination button {
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+
+  .delete-selected {  
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+
+  button {  
+    font-size: 10px;
+    padding: 6px 10px;
+  } 
+}
+
+@media screen and (max-width: 200px) {
+  .App {
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  } 
+
+  .search-container {  
+    margin-bottom: 10px;
+  }
+
+  .search-input {   
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;
+  }
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  }
+
+  th,
+  td {  
+    padding: 8px;  
+  }
+
+  th {  
+    font-size: 10px;  
+  }
+
+  td {  
+    font-size: 9px;  
+  }
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {  
+    padding: 8px;
+  }
+
+  .pagination {  
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+    
+  }
+
+  .pagination button {    
+    font-size: 8px;     
+    padding: 5px 8px;
+  }
+
+  .delete-selected {  
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+
+  button {  
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (max-width: 180px) {  
+  .App {
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .search-container {  
+    margin-bottom: 10px;
+  }   
+
+  .search-input {   
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;
+  }
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  }
+
+  th,   
+  td {  
+    padding: 8px;  
+  }
+
+  th {    
+    font-size: 10px;  
+  }
+
+  td {    
+    font-size: 9px;  
+  }   
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {   
+    padding: 8px;
+  }
+
+  .pagination {   
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+    
+  } 
+
+  .pagination button {    
+    font-size: 8px;     
+    padding: 5px 8px;
+  }
+
+  .delete-selected {    
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+
+  button {    
+    font-size: 10px;  
+    padding: 6px 10px;
+  }
+
+
+}
+
+@media screen and (max-width: 160px) {
+
+
+  .App {
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .search-container {
+    margin-bottom: 10px;
+  }
+
+  .search-input {   
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  }
+
+  .search-icon {
+    font-size: 0.8rem;
+    right: -1px;
+  }
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  th {    
+    font-size: 10px;  
+  }
+
+  td {    
+    font-size: 9px;  
+  }
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {   
+    padding: 8px;
+  }
+
+  .pagination {   
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+  } 
+
+  .pagination button {    
+    font-size: 8px;     
+    padding: 5px 8px;
+  }
+
+  .delete-selected {    
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+
+  button {    
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+}
+
+
+@media screen and (max-width: 145px) {
+  .App {  
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .search-container {  
+    margin-bottom: 10px;
+  }
+
+  .search-input {   
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;
+  } 
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  } 
+
+  th, 
+  td {  
+    padding: 8px;  
+  } 
+
+  th {    
+    font-size: 10px;  
+  } 
+
+  td {    
+    font-size: 9px;  
+  } 
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  }
+
+  .pagination-container {   
+    padding: 8px;
+  }
+
+  .pagination {   
+    gap: 0px;
+    margin-top: 10px;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    justify-content: center;
+  } 
+
+  .pagination button {    
+    font-size: 8px;     
+    padding: 5px 8px;
+  }   
+
+  .delete-selected {    
+    font-size: 10px;  
+    padding: 6px 10px;
+  } 
+
+  button {    
+    font-size: 10px;  
+    padding: 6px 10px;    
+  } 
+}
+
+
+@media screen and (max-width: 130px) {
+  .App {  
+    margin: 15px 4px;
+    padding: 15px;
+    width: 100%;
+  } 
+
+  .search-container {  
+    margin-bottom: 10px;
+  } 
+
+  .search-input {   
+    font-size: 12px;  
+    padding: 8px 6px;
+    width: 97%;
+  } 
+
+  .search-icon {  
+    font-size: 0.8rem;  
+    right: -1px;
+  } 
+
+  table {  
+    font-size: 10px;
+    margin: .3rem;
+  } 
+
+  th, 
+  td {  
+    padding: 8px;  
+  } 
+
+  th {    
+    font-size: 10px;  
+  }   
+
+  td {    
+    font-size: 9px;  
+  } 
+
+  .scrollable-table {  
+    max-height: 250px;
+    margin: .2rem;
+  } 
+
+  .pagination-container {   
+    padding: 8px;
+  }
+
+  .pagination {   
+    gap: 0px;
+    margin-top: 10px;
+    justify-content: center;
+  } 
+
+  .pagination button {    
+    font-size: 8px;     
+    padding: 5px 8px;
+  } 
+
+  .delete-selected {    
+    font-size: 10px;  
+    padding: 6px 10px;
+  }   
+
+  button {    
+    font-size: 10px;  
+    padding: 6px 10px;    
+  } 
+}

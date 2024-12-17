@@ -1,8 +1,73 @@
+ /* Adjusting App container */
+ .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
 
-/* Responsive Styles for  screen */
+  /* SearchBar adjustments */
+  .search-container {
+    margin-bottom: 15px;
+  }
 
+  .search-input {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
 
+  .search-icon {
+    font-size: 1rem;
+    right: -2px;
+  }
 
-@media (max-width: 380px) {
-  
-}
+  /* Table adjustments */
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  th {
+    font-size: 12px;
+  }
+
+  td {
+    font-size: 11px;
+  }
+
+  /* Scrollable table container adjustments */
+  .scrollable-table {
+    max-height: 300px; /* Reduce height for small screens */
+  }
+
+  /* Pagination container adjustments */
+  .pagination-container {
+    flex-direction: column;
+    padding: 10px;
+    background-color: #ffffff
+  }
+
+  .pagination {
+    justify-content: flex-start;
+    gap: 0px;
+    margin-top: 12px;
+  }
+
+  .pagination button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* Delete Selected Button adjustments */
+  .delete-selected {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* Row action buttons */
+  button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
