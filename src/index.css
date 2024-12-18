@@ -404,25 +404,708 @@ p {
     margin: 20px 10px;
     padding: 20px;
   }
+
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  }
+
+  table {
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {
+    padding: 10px;
+  }
+
+  .scrollable-table {
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination { 
+    margin-top: 10px;
+  }
+
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
 }
 
-@media screen and (max-width: 900px) {}
+.loader-overlay {
+  font-size: 14px;
+}
 
-@media screen and (max-width: 850px) {}
+.loader-container {
+  font-size: 12px;
+}
 
-@media screen and (max-width: 800px) {}
+p {
+  font-size: 12px;
+} 
 
-@media screen and (max-width: 750px) {}   
 
-@media screen and (max-width: 700px) {}
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  }
+
+  table {
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {
+    padding: 10px;
+  }
+
+  .scrollable-table {
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination { 
+    margin-top: 10px;
+  }
+
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.loader-overlay {
+  font-size: 14px;
+}
+
+.loader-container { 
+  font-size: 12px;
+}
+
+p {
+  font-size: 12px;
+
+}
+
+}
+
+@media screen and (max-width: 850px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  }
+
+  table {
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {
+    padding: 10px;
+  }
+
+  .scrollable-table {
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination { 
+    margin-top: 10px;
+  }
+
+  .pagination button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.loader-overlay {
+  font-size: 14px;
+}
+
+.loader-container {
+  font-size: 12px;
+}
+
+p {
+  font-size: 12px;  
+
+}
+
+}
+
+@media screen and (max-width: 800px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+   
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  } 
+
+  table {  
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {  
+    padding: 10px;  
+  }
+
+  .scrollable-table {  
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination {   
+    margin-top: 10px;
+  }   
+
+  .pagination button {
+    padding: 8px 12px;  
+    font-size: 12px;
+  }
+
+  button {  
+    padding: 8px 12px;  
+    font-size: 12px;
+}   
+
+.loader-overlay {
+  font-size: 14px;  
+}
+
+.loader-container {  
+  font-size: 12px;    
+}
+
+p {  
+  font-size: 12px;
+}
+
+
+}
+
+@media screen and (max-width: 750px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+   
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  } 
+
+  table {  
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {  
+    padding: 10px;  
+  }
+
+  .scrollable-table {   
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination { 
+    margin-top: 10px;
+  }
+
+  .pagination button {  
+    padding: 8px 12px;  
+    font-size: 12px;
+  }
+
+  button {  
+    padding: 8px 12px;  
+    font-size: 12px;
+}
+
+.loader-overlay {
+  font-size: 14px;
+}
+
+.loader-container {
+  font-size: 12px;
+}
+
+p {
+  font-size: 12px;
+
+}
+}   
+
+@media screen and (max-width: 720px) {
+.App {
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input { 
+  font-size: 14px;  
+  padding: 10px 8px;
+}
+
+.search-icon {  
+  font-size: 1rem;  
+  right: -1px;
+}
+
+table {   
+  font-size: 12px;
+  margin: .3rem;
+}
+
+th, 
+td {  
+  padding: 10px;  
+}
+
+.scrollable-table {   
+  max-height: 300px; /* Table ki max height */
+  margin: .3rem;
+}
+
+.pagination { 
+  margin-top: 10px;
+}
+
+.pagination button {  
+  padding: 8px 12px;  
+  font-size: 12px;  
+}
+
+button {  
+  padding: 8px 12px;  
+  font-size: 12px;  
+}
+
+.loader-overlay {  
+  font-size: 14px;  
+} 
+
+.loader-container {  
+  font-size: 12px;  
+}
+
+p {  
+  font-size: 12px;    
+}
+}
   
-@media screen and (max-width: 650px) {}
+@media screen and (max-width: 680px) {
+.App {
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input { 
+  font-size: 14px;
+  padding: 10px 8px;  
+}
+
+.search-icon {  
+  font-size: 1rem;  
+  right: -1px;
+}
+
+table {  
+  font-size: 12px;
+  margin: .3rem;
+}
+
+th, 
+td {  
+  padding: 10px;  
+}
+
+.scrollable-table {   
+  max-height: 300px; /* Table ki max height */
+  margin: .3rem;
+}
+
+.pagination-container {
+  /* padding: 8px; */
+  margin-top: 10px;
+  /* align-items: center; */
+  place-items: center;
+}
+
+.pagination { 
+  margin-top: 10px;
+} 
+
+.pagination button {  
+  padding: 8px 12px;  
+  font-size: 12px;  
+}
+
+.delete-selected {
+  padding: 8px 12px;
+  font-size: 12px;
+ margin-top: 0.8rem;
+}
+
+button {  
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.loader-overlay {  
+  font-size: 14px;  
+}
+
+.loader-container {  
+  font-size: 12px;
+
+}
+
+p {
+  font-size: 12px;
+}
+
+}
   
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 660px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
 
-@media screen and (max-width: 550px) {}
+  .search-container {
+    margin-bottom: 15px;
+  }
 
-@media screen and (max-width: 500px) {}
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  }
+
+  table {  
+    font-size: 12px;
+    margin: .3rem;
+  }
+
+  th, 
+  td {  
+    padding: 10px;  
+  }
+
+  .scrollable-table {   
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  }
+
+  .pagination-container {  
+    /* flex-direction: column; */
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .pagination { 
+    margin-top: 10px;
+  }
+
+  .pagination button {  
+    padding: 8px 12px;  
+    font-size: 12px;  
+  }
+
+  .delete-selected {
+    /* font-size: 10px;
+    padding: 6px 10px; */
+    padding: 8px 12px;
+    font-size: 12px;
+    align-items: center;
+  }
+
+  button {  
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .loader-overlay {  
+    font-size: 14px;  
+  }
+
+  .loader-container {  
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .search-container { 
+    margin-bottom: 15px;
+  }
+
+  .search-input { 
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {  
+    font-size: 1rem;  
+    right: -1px;
+  } 
+
+  table {  
+    font-size: 12px;
+    margin: .3rem;
+  } 
+
+  th, 
+  td {  
+    padding: 10px;  
+  }
+
+  .scrollable-table {   
+    max-height: 300px; /* Table ki max height */
+    margin: .3rem;
+  } 
+
+  .pagination-container {  
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    padding: 10px;
+    gap: 10px;
+  } 
+
+  .pagination { 
+    margin-top: 10px;
+  } 
+
+  .pagination button {  
+    padding: 8px 12px;  
+    font-size: 11px;  
+  }
+
+  .delete-selected {  
+    padding: 8px 12px;
+    font-size: 11px;
+    /* align-items: center; */
+  } 
+
+  button {  
+    padding: 8px 11px;  
+    font-size: 12px;
+  }
+
+  .loader-overlay {  
+    font-size: 14px;  
+  }
+
+  .loader-container {  
+    font-size: 12px;
+  }
+
+  p {  
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .pagination-container {  
+    padding: 10px 1px;
+    gap: 10px;
+  } 
+
+  .pagination { 
+    margin-top: 10px;
+  } 
+
+  .pagination button {  
+    padding: 8px 12px;  
+    font-size: 11px;  
+  }
+
+  .delete-selected {  
+    padding: 8px 12px;
+    font-size: 11px;
+
+  }
+
+
+}
+
+@media screen and (max-width: 620px) {
+.App {
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+.search-container { 
+  margin-bottom: 15px;
+}
+
+.search-input { 
+  font-size: 14px;  
+  padding: 10px 8px;
+}
+
+.search-icon {  
+  font-size: 1rem;  
+  right: -1px;
+}
+
+table {  
+  font-size: 12px;
+  margin: .3rem;
+} 
+
+th, 
+td {  
+  padding: 10px;  
+}
+
+.scrollable-table {   
+  max-height: 300px; /* Table ki max height */  
+  margin: .3rem;  
+} 
+
+.pagination-container {  
+  padding: 5px;
+  gap: 0px;
+} 
+
+.pagination { 
+  margin-top: 10px;
+} 
+
+.pagination button {  
+  padding: 8px 12px;
+  font-size: 11px;
+}
+
+.delete-selected {
+  padding: 8px 12px;
+  font-size: 11px;
+  /* align-items: center; */
+}
+
+button {
+  padding: 8px 11px;
+  font-size: 12px;
+}
+
+.loader-overlay {
+  font-size: 14px;
+}
+
+.loader-container {
+  font-size: 12px;
+}
+
+p {
+  font-size: 12px;
+}
+}
 
 @media screen and (max-width: 450px) {}
 
