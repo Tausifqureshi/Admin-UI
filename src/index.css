@@ -326,12 +326,96 @@ p {
 
 
 /* Media query for screens smaller than 768px */
-@media screen and (min-width: 768px) {
-  .App {
-    margin: 20px 10px;
-    padding: 20px;
-  }
-  
+@media (min-width: 650px) and (max-width: 768px) {
+ .App {
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input { 
+  font-size: 14px;  
+  padding: 10px 8px;
+}
+
+.search-icon {
+  font-size: 1rem;
+  right: -2px;
+}
+
+table {     
+  font-size: 12px;
+  /* margin: .3rem; */
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+.pagination button {
+  padding: 8px 12px; /* Reduced padding for compact design */
+  border-radius: 4px; /* Slightly rounded corners */
+  cursor: pointer;
+  font-size: 12px; /* Uniform font size */
+  color: white;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s ease;
+  margin: 2px; /* Reduced margin for compact design */
+  box-shadow: 0 2px 4px rgba(0, 95, 163, 0.3); /* Enhanced shadow */
+  background-color: #007bff; /* Blue background */
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 
 }
+
+.pagination button:active {
+  background-color: #004080; /* Deep blue for active state */
+  background-color: #f9f9f9; /* Deep blue for active state */
+  color: #333;
+  font-weight: bold;
+}
+
+.pagination button.active { 
+  background-color: #004080; /* Deep blue for active state */
+  background-color: #f9f9f9; /* Deep blue for active state */
+  color: #333;
+  font-weight: bold;
+
+}
+
+.pagination button:disabled {
+  background-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #ccc;
+  box-shadow: none;
+  color: #777;
+  background-color: #f9f9f9;
+  font-weight: normal;  
+
+}
+
+.pagination button:disabled:hover {
+  background-color: #e0e0e0;
+  color: #ccc;
+  cursor: not-allowed;
+  border-color: #ccc;
+  box-shadow: none;
+  color: #777;
+  background-color: #f9f9f9;  
+
+}
+
+
+
+}
+
+
 
