@@ -292,50 +292,39 @@ p {
 }
 
 
-/* Scrollable table container */
-
 /* Scrollable wrapper for the table */
 .scrollable-table {
-  max-height: 400px; /* Table ki max height */
-  overflow-y: auto;  /* Scroll bar vertically */
+  max-height: 400px; 
+  overflow-y: auto;  
   border: 1px solid #ddd;
   margin-top: 20px;
-  border-radius: 8px; /* Rounded corners for the table */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow around the table */
-  background-color: #fff; /* Background for the table container */
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  background-color: #fff; 
+  scroll-behavior: smooth; 
 }
 
-/* Modern custom scrollbar */
 .scrollable-table::-webkit-scrollbar {
-  width: 10px; /* Scrollbar ki width */
-  height: 10px; /* Horizontal scrollbar height (optional if needed) */
+  width: 8px; 
 }
 
 .scrollable-table::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6a11cb, #2575fc); /* Gradient for thumb */
-  border-radius: 5px; /* Smooth rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
+  background: #c1c1c1; 
+  border-radius: 4px; 
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); 
 }
 
 .scrollable-table::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
-  cursor: pointer; /* Pointer cursor for better UX */
+  background: #a8a8a8; 
 }
 
 .scrollable-table::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Light background for scrollbar track */
-  border-radius: 5px; /* Rounded corners for track */
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
-}
-
-/* Optional: Add animation for smooth scrolling */
-.scrollable-table {
-  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  background: #f1f1f1; 
+  border-radius: 4px;
 }
 
 
 /* All responsive styles */
-
 @media screen and (max-width: 980px) {
   .App {
     margin: 20px 10px;
@@ -358,7 +347,7 @@ p {
 
   table {
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th,
@@ -368,7 +357,7 @@ p {
 
   .scrollable-table {
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination {
@@ -421,7 +410,7 @@ p {
 
   table {
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th, 
@@ -431,7 +420,7 @@ p {
 
   .scrollable-table {
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination { 
@@ -443,6 +432,7 @@ p {
     font-size: 12px;
   }
 
+ 
   button {
     padding: 8px 12px;
     font-size: 12px;
@@ -485,7 +475,7 @@ p {
 
   table {
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th, 
@@ -495,7 +485,7 @@ p {
 
   .scrollable-table {
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination { 
@@ -549,7 +539,7 @@ p {
 
   table {
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th, 
@@ -559,7 +549,7 @@ p {
 
   .scrollable-table {
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination { 
@@ -613,7 +603,7 @@ p {
 
   table {  
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th, 
@@ -623,7 +613,7 @@ p {
 
   .scrollable-table {  
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination {   
@@ -677,7 +667,7 @@ p {
 
   table {  
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th, 
@@ -687,7 +677,7 @@ p {
 
   .scrollable-table {   
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination { 
@@ -740,7 +730,7 @@ p {
 
 table {   
   font-size: 12px;
-  margin: .3rem;
+  /* margin: .3rem; */
 }
 
 th, 
@@ -750,7 +740,7 @@ td {
 
 .scrollable-table {   
   max-height: 300px; /* Table ki max height */
-  margin: .3rem;
+  /* margin: .3rem; */
 }
 
 .pagination { 
@@ -802,7 +792,7 @@ p {
 
 table {  
   font-size: 12px;
-  margin: .3rem;
+  /* margin: .3rem; */
 }
 
 th, 
@@ -812,14 +802,14 @@ td {
 
 .scrollable-table {   
   max-height: 300px; /* Table ki max height */
-  margin: .3rem;
+  /* margin: .3rem; */
 }
 
 .pagination-container {
   /* padding: 8px; */
   margin-top: 10px;
   /* align-items: center; */
-  place-items: center;
+  /* place-items: center; */
 }
 
 .pagination { 
@@ -879,7 +869,7 @@ p {
 
   table {  
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   th, 
@@ -889,7 +879,7 @@ p {
 
   .scrollable-table {   
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   }
 
   .pagination-container {  
@@ -957,7 +947,7 @@ p {
 
   table {  
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   } 
 
   th, 
@@ -967,7 +957,7 @@ p {
 
   .scrollable-table {   
     max-height: 300px; /* Table ki max height */
-    margin: .3rem;
+    /* margin: .3rem; */
   } 
 
   .pagination-container {  
@@ -1011,8 +1001,11 @@ p {
 }
 
 @media screen and (max-width: 625px) {
+  td{
+    padding: 10px 8px;  
+  }
   .pagination-container {  
-    padding: 10px 1px;
+    padding: 10px 5px;
     gap: 10px;
   } 
 
@@ -1056,17 +1049,17 @@ p {
 
 table {  
   font-size: 12px;
-  margin: .3rem;
+  /* margin: .3rem; */
 } 
-
-th, 
+ 
 td {  
-  padding: 10px;  
+  padding: 10px 8px;  
 }
 
 .scrollable-table {   
   max-height: 300px; /* Table ki max height */  
-  margin: .3rem;  
+  /* margin: .3rem;   */
+  scrollbar-width: none;
 } 
 
 .pagination-container {  
@@ -1110,9 +1103,8 @@ p {
 @media screen and (max-width: 605px) {
   .scrollable-table {
     max-height: 300px;
-    /* scrollbar-width: none; */
-    margin: .3rem;
-    
+    /* margin: .3rem; */
+    scrollbar-width: none; 
   }
 
   .pagination-container {
@@ -1157,17 +1149,18 @@ p {
 
   table {  
     font-size: 12px;
-    margin: .3rem;
+    /* margin: .3rem; */
   } 
 
   th, 
   td {  
-    padding: 10px;  
+    padding: 9px 7px;
   } 
+  
 
   .scrollable-table {  
     max-height: 300px; /* Reduce height for small screens */
-    margin: .2rem;
+    /* margin: .2rem; */
   } 
 
   .pagination-container {   
@@ -1193,9 +1186,130 @@ p {
     padding: 8px 11px;
     font-size: 12px;
   }
+
+  .loader-overlay {
+    font-size: 14px;
+  }
+
+  .loader-container { 
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
 }
 
+@media screen and (max-width: 595px) {
+  .pagination-container {
+    padding: 15px 10px;
+    gap: 10px;
+  }
 
+  .pagination {
+    margin-top: 10px;
+  }
+
+  .pagination button {
+    padding: 8px 11px;
+    font-size: 10px;
+  }
+
+  .delete-selected {
+    padding: 8px 11px;
+    font-size: 10px;
+  }
+
+  button {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+
+}
+
+@media screen  and (max-width: 591px) {
+  .pagination-container {
+    margin-top: 1rem;
+    padding: 15px 0px;
+  }
+}
+
+@media  screen and (max-width: 586px) {
+ th,td {  
+    padding: 9px 2px;
+  }
+
+  input[type="checkbox"]{
+    margin-left: .2rem;
+}
+}
+
+@media screen and (max-width: 583px) {
+  .App {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  .search-container { 
+    margin-bottom: 15px;
+  } 
+
+  .search-input {  
+    font-size: 14px;  
+    padding: 10px 8px;
+  }
+
+  .search-icon {    
+    font-size: 1rem;  
+    right: -1px;
+  }
+
+  table {  
+    font-size: 12px;
+    /* margin: 0rem; */
+  }
+
+
+  td {  
+    padding: 13px 5px;  
+  }
+  
+  td input[type="checkbox"]{
+    margin-left: .5rem;
+  }
+
+  .scrollable-table {  
+    max-height: 300px; /* Reduce height for small screens */
+    /* margin: 0rem; */
+  } 
+
+  .pagination-container {   
+    padding: 5px 0;
+    gap: 0px;  
+    margin-top: 1rem;
+  } 
+
+  .pagination { 
+    margin-top: 10px; 
+  } 
+
+  .pagination button {  
+    padding: 8px 12px;    
+    font-size: 9px;  
+  } 
+
+  .delete-selected {  
+    padding: 8px 12px;  
+    font-size: 11px;
+  } 
+
+  button {  
+    /* padding: 8px 11px;     */
+    /* font-size: 12px; */
+  } 
+}
 
 @media screen and (max-width: 450px) {}
 
