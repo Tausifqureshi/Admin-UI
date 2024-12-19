@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   font-weight: 300;
   background-color: #f4f7fa;
   color: #333;
@@ -86,11 +86,11 @@ th {
   background-color: #007bff;
   color: white;
   text-transform: uppercase;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 td {
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 
@@ -565,30 +565,124 @@ p {
 }
 
 @media screen and (max-width: 513px){
-  .parent-pagination{
-   width: 100%;
-  }
-
   .pagination-container{
-    padding: 9px 0px;
-    /* background-color: #fff; */
-    width: 100%;
-    /* justify-content: center; */
+    justify-content:center;
   }
 
   .pagination button{  
-    font-size: 8px;
+    font-size: 9px;
+    margin: 0px 3px;
   }
 
   .delete-selected{  
-    font-size: 8px;
+    font-size: 9px;
   }
 
 }
 
+@media screen and (max-width: 480px){
+
+  th, 
+  td {  
+    padding: 1px;  
+    font-size: 11px;
+  }
+   
+  .pagination button{  
+    font-size: 7px;
+  }
+
+  .delete-selected{   
+    font-size: 7px;
+  }
+
+}
+
+@media screen and (max-width: 463px){
+  th, 
+  td {  
+    padding: 0px 8px;  
+    font-size: 12px;
+  }
+
+  .pagination button{  
+    font-size: 10px;
+    margin:  1px 5px;
+  }
+
+  .delete-selected{  
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 446px){
+ 
+
+  th, 
+  td {  
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 433px){
+  .pagination-container{
+   justify-content: center;
+  }
+
+  .pagination{
+    margin-left: 2rem;
+    gap: 10px;
+  }
+
+}
+
+@media screen and (max-width: 400px){
+
+  button{
+    font-size: 9px;
+  }
 
 
+}
 
+
+@media screen and (max-width: 338px){
+  .pagination{
+    margin-left: 3.4rem;
+  }
+ .pagination-button{
+   margin: 0px;
+ }
+
+
+}
+
+@media screen and (max-width: 311px){
+  .pagination{
+    margin-left: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 309px){
+  .pagination{
+    margin-left: 1.4rem;
+  }
+
+
+}
+
+@media screen and (max-width: 289px){
+  .pagination{
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 275px){
+  .pagination{
+    margin-left: 2rem;
+  }
+}
 
 
 
