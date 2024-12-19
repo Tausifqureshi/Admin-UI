@@ -116,6 +116,10 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
 
     </table>
    </div>
+    
+    <div className='parent-pagination'>
+
+   
     <div className='pagination-container'>
     <div className='delete-button'>
     <button className="delete-selected" onClick={handleDeleteSelected}>Delete Selected</button>
@@ -129,7 +133,7 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
 
     />
     </div>
-
+    </div>
      
     </div>
   )
