@@ -3,7 +3,7 @@ import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
 import TableRow from './TableRow'
 import Pagination from './Pagination'
-import Loader from './Loder'
+import Loader from './Loder'  
 
 const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
   const [selectedRows, setSelectedRows] = useState([]); // Select ki gayi rows ka state
