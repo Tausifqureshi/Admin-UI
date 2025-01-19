@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, version } from 'react'
 import SearchBar from './SearchBar'
 import SelectAllCheckBox from './SelectAllCheckBox'
 import TableRow from './TableRow'
 import Pagination from './Pagination'
 import Loader from './Loder'  
 
-const Table = ({ data , setIsData, originalData,  setOriginalData}) => {
+const Table = ({ data , setIsData, originalData,  setOriginalData, version}) => {
   const [selectedRows, setSelectedRows] = useState([]); // Select ki gayi rows ka state
   const [currentPage, setCurrentPage] = useState(1);  // Current page ka state
   const rowsPerPage = 10; // Har page par 10 rows dikhani hain
@@ -70,6 +70,7 @@ setCurrentPage(updatedData.length === 0 ? 1 : currentPage);
 
   return (
     <div className='App'>
+      <h1> React Verion Cheacking {version}</h1>
     <SearchBar data={data} setIsData={setIsData} originalData={originalData}/>
     
     <div className='scrollable-table'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, version } from "react";
 import axios from "axios";
 import Table from "./Table";
 import Loader from "./Loder";
@@ -42,7 +42,7 @@ function Admin() {
     }
 
   return <div className="container"> 
-  <Table  data={isData} setIsData={setIsData} originalData={originalData} setOriginalData={setOriginalData} 
+  <Table  data={isData} setIsData={setIsData} originalData={originalData} setOriginalData={setOriginalData} version={version}
   
   />
  
