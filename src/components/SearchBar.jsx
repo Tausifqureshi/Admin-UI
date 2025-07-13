@@ -7,7 +7,7 @@ const SearchBar = ({ data, setIsData, originalData, }) => {
   const handleSearch = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
-      const searchQuery = query.toLowerCase(); // Ensure searchQuery is defined here
+      const searchQuery = query.trim().toLowerCase(); // Ensure searchQuery is defined here
 
       if (!searchQuery) {
         // Agar query empty ho, toh original data ko reset karein
